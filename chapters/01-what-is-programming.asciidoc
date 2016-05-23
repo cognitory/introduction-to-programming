@@ -1,12 +1,17 @@
 == What is programming?
 
-In the most general sense, programming is the act of instructing a system on what to do.
+``Programming'' is the act of creating instructions for a system on what to do or how to behave.
 
-It's likely that you have already programmed things, and perhaps you didn't realize:
+Notice that I didn't say anything about "computers" or "writing code". "Writing code for computers" happens to be the most common form of programming, but we can learn a lot about programming without throwing "computers" or "code" into the mix.
 
-  - set the microwave to run for 1:00 minute at 50% power
-  - written directions for a friend on how to get to your house
-  - wrote a recipe for your special chocolate chip cookies
+It's likely that you have already programmed, and perhaps you didn't realize it. Have you ever:
+
+  - set the microwave to run for 1:00 minute at 50% power?
+  - set an alarm clock?
+  - texted directions to a friend on how to get to your house?
+  - written down a recipe for your special chocolate chip cookies?
+
+If so, you're a programmer already.
 
 Or perhaps, you've been "programmed" before, and didn't even realize:
 
