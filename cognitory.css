@@ -19,6 +19,7 @@ pre, p code {
   background: black;
   color: white;
   border-radius: 0.25em;
+  font-size: 0.85em;
 }
 pre {
   display: inline-block;
@@ -26,7 +27,6 @@ pre {
   padding: 0.8em;
 }
 p code {
-  font-size: 0.85em;
   padding: 0.4em;
   white-space: nowrap;
 }
