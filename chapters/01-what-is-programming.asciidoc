@@ -375,7 +375,7 @@ Defining `functions` that call other `functions` (that call other `functions`...
 
 
 
-=== Inputs and Outputs
+=== Functions
 
 One thing to notice about the functions we made up in the previous chapter is that some of them require some information to be passed in, while others could be written on their own (for example, `goto` needed an X and Y, while `v` did not). We can think of those values as "inputs" to the functions (later we'll also hear them called "parameters", but for now, lets stick to "inputs").
 
@@ -431,7 +431,7 @@ Presumably, at some point, we would want some side effects (say, like, printing 
 
 In the future, we will refer to functions that don't change state as "pure" functions, and ones that do as "stateful" or "impure" functions.
 
-=== Function Review
+==== Title
 
 We can now think of functions as certain instructions that a system can understand, which optionally take some inputs, optionally return some values, and optionally change some state:
 
@@ -472,11 +472,11 @@ In our programs, data will be used in various ways:
 
 There are infinite kinds of data we might want to handle in a program, but, it turns out, we can represent almost any kind of information using two building blocks of data: (1) primitive values, such as numbers and text (2) compound values, such as vectors, and maps.
 
-=== Primitive Values
+==== Primitive Values
 
 Primitive values are the simplest forms of data; they are the atoms of the programming world. They include numbers (such as `1` and `1.5`), "strings" (which represent text, such as `"hello"` and `"goodbye"`) and other types of things called "booleans", "symbols" and "nil". Let's take a look at each.
 
-==== Numbers
+===== Numbers
 
 Numbers are exactly what they say they are, and in most programming languages you just write them as they are. Clojure, which is the language we'll be using for the rest of this book understands three kinds of numbers:
 
@@ -488,23 +488,23 @@ Fractions (ex. `7/23`)
 
 From now on, we'll just refer to these as "numbers".
 
-==== Strings
+===== Strings
 
 "Strings" represent text. It can be a single character: `"a"`, a word: `"elephant"`, a sentence: `"This is a string"`, or the entire corpus of Shakespeare's works: (uhhh... to save space, we'll skip the example for this one).
 
 In Clojure, as in most programming languages, strings are written with quotation marks around them, like so: `"hello again!"`. The quotation marks are necessary to help differentiate strings from names of functions in our program (so, `goto!` would be the function, while `"goto!"` would just be the text).  In a similar vein, `2` is the number 2, while `"2"` is a string - they are completely different things, as far as Clojure is concerned.
 
-==== Booleans
+===== Booleans
 
 "Booleans" is a fancy programmer for the concepts of `true` and `false`. In Clojure, that's exactly how we write them: `true` and `false`. They come in handy for representing certain information (ex. is John person late? `true`), as results of comparisons (ex. is 3 greater than 5? `false`) and as return values from functions (ex. `(even? 5)` `false`).
 
 Just to make it super clear, `true` is not the same things as `"true"` (the first is a boolean, the second is a string).
 
-==== nil
+===== nil
 
 "nil" is a special value that represents the "lack of a value" or "nothingness". In math, that honor is usually bestowed to `0`, but because `0` is a number, it ends up being very useful to have a way to say "nothing". In Clojure, you can write it simply as `nil`.
 
-==== keywords
+===== keywords
 
 "Keywords" are a text labels that we will use in our programs to help us name things (we'll see them very soon in maps). For example, we might have a program that deals with colors, which we could represent in Clojure with keywords as so: `:red`, `:white`, `:green`, `:purple`.
 
@@ -512,11 +512,11 @@ Keywords might seem similar to strings (and in some languages, there are no keyw
 
 If the distinction is confusing, don't worry about it. If you use strings instead of keywords, your programs will still work.
 
-=== compound values
+==== compound values
 
 Primitive values are nice, but we often need to deal with collections of values, and that's where "vectors" and "maps" come in. If primitive values were atoms of the programming world, then "compound values" are the molecules.
 
-==== vectors
+===== vectors
 
 "Vectors" are ordered lists of values. For example, here is a vector of numbers in Clojure: `[10 4 2 6]`, and here is a vector of strings and numbers: `[1 "hello" 4 "goodbye"]`.
 
@@ -526,7 +526,7 @@ Being able to store values in lists ends up being very, very useful. Vectors wil
 
 Vectors can also contain non-primitive values, such as other vectors: `[1 2 3 ["four" [:five]]]`
 
-==== maps
+===== maps
 
 "Maps" are like dictionaries - they contain a list of "keys", each of which correpsondings to a certain "value". In a dictionary, the "keys" are the words and the "values" are the definitions.
 
@@ -551,12 +551,12 @@ Maps can have any values as "keys" and any values as "values". This is a totally
 ----
 
 
-=== other types
+==== other types
 
 There are more types that we can use in Clojure than I've mentioned, but the ones we know will do for now, and we'll see the others in the future (notably: "sets", "datetimes" and "uuids").
 
 
-== putting things together
+==== putting things together
 
 Now that we know various kinds of values that we can work with, let's represent some non-trivial data using them.
 
@@ -593,12 +593,12 @@ Try coming up with ways of representing the following data sets:
 --
 
 
-=== Enter Clojure
+== Enter Clojure
 
 
 
 
-=== Solving Problems with Programming
+== Solving Problems with Programming
 
 identify:
   inputs
