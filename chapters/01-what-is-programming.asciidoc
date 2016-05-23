@@ -433,18 +433,13 @@ In the future, we will refer to functions that don't change state as ``pure'' fu
 
 We can now think of functions as certain instructions that a system can understand, which optionally take some inputs, optionally return some values, and optionally change some state:
 
-//[function diagram]
-
--
--       -
--
-    *
+image::figures/a-function.svg[]
 
 There are some functions that a system provides for us (like `v>^<` from our pacman-bot example) and others that we write ourselves, using the system functions, to make our lives easier (like `goto!` and `slope`).
 
 We can now think of a ``program'' as a function of functions (...of functions ...of functions):
 
-//[program built from functions diagram]
+image::figures/function-of-functions.svg[]
 
 Like the functions inside of it, the ``program'' function may take some input, change state, and return some output.
 
