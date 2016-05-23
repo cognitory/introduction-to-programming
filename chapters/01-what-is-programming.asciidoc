@@ -153,6 +153,7 @@ Test it out on yourself (or a friend) to make sure that Pacman could get from an
 
 Here are a few possible sets:
 
+.Set A
 ----
 forward
 back
@@ -160,6 +161,7 @@ left
 right
 ----
 
+.Set B
 ----
 up
 down
@@ -167,6 +169,7 @@ left
 right
 ----
 
+.Set C
 ----
 ^
 v
@@ -174,11 +177,13 @@ v
 >
 ----
 
+.Set D
 ----
 forward
 rotate-right
 ----
 
+.Set E
 ----
 nX
 eX
@@ -188,14 +193,17 @@ sX
 (where X is the number of times to repeat the preceding direction)
 ----
 
+.Set F
 ----
 (goto! x y)     (where x and y are integers corresponding to the row and column, respectively)
 ----
 
+.Set G
 ----
 (find! object)   (where object is one of: cherry or ghost)
 ----
 
+.Set H
 ----
 go!   (which makes the bot go to the cherry)
 ----
