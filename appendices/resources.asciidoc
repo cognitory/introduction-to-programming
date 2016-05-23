@@ -1,0 +1,9 @@
+== Resources
+
+Clojure Brave and True
+
+
+Cognitory
+
+
+clojuredocs

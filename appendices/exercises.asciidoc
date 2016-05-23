@@ -1,0 +1,46 @@
+== Programming Exercises
+
+bound
+count words in a file
+count occurence of each character in a file
+identify if a word is a palindrome
+merge sort
+identify duplicate files in a directory
+translate from piglatin and back
+english to morse code and back
+
+encrypt and decrypt some text
+
+tally up voting results
+
+english numbers -> integers and back
+
+body mass index
+
+credit card number checker (luhn)
+
+levenstein distance
+
+fuzzy search (using lev)
+
+guess my number game ("smaller" / "larger")
+choose your own adventure game
+schedule fitter (simulated annealing)
+accounting system
+sudoku solver
+mastermind game (w/ cheating ai)
+implement the pacman-bot system
+
+
+
+
+
+
+
+
+
+
+
+
+
+

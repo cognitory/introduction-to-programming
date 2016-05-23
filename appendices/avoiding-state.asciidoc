@@ -1,0 +1,7 @@
+== Avoiding State
+
+what is state
+
+why state is bad
+
+how we can avoid state

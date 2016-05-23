@@ -1,0 +1,12 @@
+== Web Development
+
+Understanding the systems we'll be using:
+ - browser
+    - HTML
+    - CSS
+    - JS
+ - HTTP
+
+react
+reagent
+

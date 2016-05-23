@@ -1,0 +1,21 @@
+== Programming Interfaces
+
+text
+  by far most popular
+  piggyback on our ability to read
+
+  decent density ratio
+  easy to manipulate
+
+
+flow-based
+
+
+block-based (scratch)
+
+
+cell-based (excel)
+
+
+...
+

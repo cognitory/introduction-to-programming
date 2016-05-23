@@ -1,0 +1,615 @@
+== What is programming?
+
+In the most general sense, programming is the act of instructing a system on what to do.
+
+It's likely that you have already programmed things, and perhaps you didn't realize:
+
+  - set the microwave to run for 1:00 minute at 50% power
+  - written directions for a friend on how to get to your house
+  - wrote a recipe for your special chocolate chip cookies
+
+Or perhaps, you've been "programmed" before, and didn't even realize:
+
+ - built a Lego set according to the instructions
+ - folded some origami according to some instructions
+ - played a song from some sheet music
+ - written a todolist for yourself (whoah... programming yourself)
+
+[options="header"]
+|======
+| Programmer  | Processor  | Interface           | Language    | Inputs                        | Result
+|  you        | microwave  | microwave buttons   | numbers (?) | 1:00 time, 50% power, start!  | turns on
+|======
+
+----
+- programmer: you
+  processor:  microwave
+  interface:  microwave buttons
+  language:   numbers   (?)
+  inputs:     1:00 time, 50% power, start!
+  result: |
+              turns on when you press start!
+              runs at 50% power for 1:00 minute
+              turns off
+
+- programmer: you
+  processor:  your friend
+  interface:  text
+  language:   english
+
+  inputs:     a list of steps in english
+  result: |
+
+
+----
+
+what to do vs. how to do it
+  depends on where you draw the bounds
+
+  microwave:
+    what: make some chocolate chip cookies
+    how: 1) gather the following materials: ...
+         2) gather the following tools: ...
+         3) mix together ... in a bowl
+         4) scoop onto a pan
+         5) bake in a preheated oven at 450 for 20 minutes
+
+   what: mix together ... in a bowl
+   how: 1) place empty bowl on counter
+        2) add ... cups of ... into bowl
+        3) add ... spoons of ... into bowl
+        4) ...
+        5) mix with a wooden spoon
+
+   what: mix with a wooden spoon
+   how: 1) insert spoon into bowl with ingredients
+        2) move spoon in a circular motion
+        3) stop when you can no longer tell ingredients apart
+
+
+can do this with any set of instructions
+
+"levels of abstraction"
+
+usually ends up looking like this:
+
+    |
+    --
+   /  \
+  /\  /\
+ /\/\/\/\
+
+In practice, we stop at some point; where we stop depends on what level of instructions we expect the "processor" to understand.
+For our cookie recipe, if you are writing it for a friend who has baked before, (1) is probably sufficient, but for someone who has never stepped inside a kitchen, you may need to go a level or two deeper. If you're trying to create a cookie making robot, you'd need to get down to the level of "emit a 5V signal on this wire for 0.5s" (to turn on a motor, to move the arm, to pick up the spoon...)
+
+also notice that the language that is used varies; an experienced cook knows what "braising" means, but a beginner would need that explained; a pianist knows what "allegro" means, but most people don't; these domain-specific terms are used to save time. when you need to explain something, you adapt your language based on what your audience understand. It's the same with programming - a programmer needs to adapt their language to what the processor (be it a computer or an aspiring chef) can understand.
+
+
+
+We've already made a few important observations about programming:
+
+ - programmer
+ - processors (of various forms)
+ - instructions (following various rules, "languages")
+ - instructions can be written at various levels of abstraction
+      a "what" broken down into a number of "how" steps
+      or, a group of "how" steps "abstracted" into a "what"
+ - a programmer needs to know what the processor understands to be able to create instructions for the processor
+
+The last observation is especially important. To program a system, you must know what a system can do and what instructions it understands. Most of programming is learning about various systems that can be programming and _then_ applying that knowledge to make those systems do what you want.
+
+.Exercise
+****
+Fill in the table for the other examples
+****
+
+=== Chapter Title
+
+In this book, you'll be learning "how to program", and more specifically, "how to program computers." But even that needs clarifying; there are hundreds of different kinds of "computers" (desktops, labtops, tablets, phones, watches, cars, refrigerators), and each is composed of hundreds of interoperating systems. (appendix: down the computer rabbit hole)
+
+In this book, we're going to be learning "how to program computers that understand Clojure":
+  (1) Java Run Time -> POSIX-compatible operating systems (... Mac, Linux, Windows, Android)
+         CRUD files, sockets, memory
+  (2) Javascript Run Time -> Web Browsers
+                          -> Node -> POSIX
+
+interface: text
+language: clojure
+
+(appendix: why clojure)
+(appendix: programming interfaces)
+
+But before we start understanding Clojure, Run Times, Operating Systems and Browsers, which are all very complex systems, we'll make a few more observations about systems and instructions using a simple made-up system.
+
+=== Instructions and Abstraction II
+
+We program to solve a certain problem using a certain system. The system we choose contrains us in the way we can program it, and the problem we choose constrains in the way we solve it. The solution -- our program -- is the mediator between these two domains and will often be made of many layers (of abstraction, as we had learned in the previous chapter).
+
+Here is a system:
+
+//[ PACMAN-BOT BOARD ]
+
+Let's take the role of designers of this system. As the designers, we want to provide other people the ability to program Pacman-bot to move around the board (presumably to get the Cherry and avoid the Ghosts, but who knows what people will come up with). How might we allow people to program Pacman-bot?
+
+.Exercise
+****
+Try to come up with a set of instructions that someone else could use to instruct Pacman to move around the board.
+****
+
+.Exercise
+****
+Test it out on yourself (or a friend) to make sure that Pacman could get from any one place to any other place using the instructions.
+****
+
+Here are a few possible sets:
+
+----
+forward
+back
+left
+right
+----
+
+----
+up
+down
+left
+right
+----
+
+----
+n
+s
+e
+w
+----
+
+----
+^
+v
+<
+>
+----
+
+----
+forward
+rotate-right
+----
+
+----
+nX
+eX
+wX
+sX
+
+(where X is the number of times to repeat the preceding direction)
+----
+
+----
+(goto! x y)     (where x and y are integers corresponding to the row and column, respectively)
+----
+
+----
+(find! object)   (where object is one of: cherry or ghost)
+----
+
+----
+go!   (which makes the bot go to the cherry)
+----
+
+What we've come up with are programming languages! They are very limited, but, yes, they are programming languages. (Now you can tell your friends that not only can you program, but you've _designed_ a programming language!)
+
+(Also worth noting: all the examples above are text-based instruction languages, but you could also have come up with visual instruction systems (drawing a map, using colors, using pictograms), a sound-based system, a hand gesture system... anything)
+
+Lets try using each language to get pacman-bot to the cherry based on the board in [figure x]:
+
+Using Set 1 we could do:
+
+----
+forward
+forward
+left
+left
+forward
+right
+forward
+----
+
+With Set 4 we might do:
+
+----
+^>>>>>^>v>>>
+----
+
+With Set 5 we might do:
+
+----
+n5w2n5
+----
+
+.Exercise
+****
+Try doing it with the other sets.
+****
+
+A few things to notice:
+
+ - there's more than one possible way to define an instruction set for a given system
+ - some instruction sets require more explanation ("documentation") than others
+ - some instruction sets are easier than others to solve a problem with
+ - some instruction sets result in more instructions than others (but might be easier to solve the problem with)
+ - some instruction sets are harder than others to read after the fact (but maybe easier to solve the problem with)
+ - given an instruction set, there's more than one way to solve a problem
+ - instruction sets aren't enough, a language must also define how instructions are to be combined (and as programmers, we must understand not just what instructions are available, but how they can be combined)
+
+Later in this book we will be learning about the Clojure language and all the instructions it supports and how we can combine them to solve problems.
+
+Before we move on from pacman-bot, let's try the following: can we convert between the different pacman-bot languages? If someone gave us pacman-bot that only understood Language X (`v>^<`) could we still program pacman-bot to understand a Language Y program (`n5e3w1`)? If `v>^<` are the only instructions that Language X allows, then the answer is "no," at least not directly, but we could write another system that could convert from Language Y to Language X. It might look something like this:
+
+----
+nX means repeat "^" X times
+wX means repeat "<" X times
+eX means repeat ">" X times
+sX means repeat "v" X times
+----
+
+Can you see how the rules above would allow us to convert from `n5e3w1` to `^^^^^>>><`?
+
+Now how about converting from Language Z `(goto! x y)` to Language Y `v>^>`? Ponder that for a moment.
+
+Hmmm...
+
+We have a problem. In order to make pacman-bot follow the `(goto! 5 3)` instruction using the `v>^<` instructions, we need to know where pacman-bot is before we give him the command. Before, with Language X, we were able to blindly convert from on language to another, but this time, we need some information first (pacman-bots starting location).
+
+Lets refer to pacman bot's starting location as startX and startY (so, for figure1 we would say that startX is 3 and startY is 5).
+
+Now, back to our problem: how do we go from an instruction like `(goto! 2 4)` to `v>^<` style instructions? (knowing that pacman-bot starts at `startX` and `startY`)
+
+.Exercise
+****
+Try to come up with some rules to make the conversion possible. Use any words you want. It might take a little more math this time.
+****
+
+One way we could write down the rules could be:
+
+----
+given startX is some number indicating pacman-bot's starting X position
+given startY is some number indicating pacman-bot's starting Y position
+
+(goto! targetX targetY) means:
+   if targetX is greater than startX:
+      repeat ">" (targetX - startX) times
+   if targetX is less than startX:
+      repeat "<" (startX - targetX) times
+   if targetY is greater than startY:
+      repeat "v" (targetY - startY) times
+   if targetY is less than startY:
+      repeat "^" (startY - targetY) times
+----
+
+.Exercise
+****
+Follow the rules above to convert from `(goto! 2 4)` to `v>^<` instructions, given that pacman-bot starts at his location in Figure 1: [3, 5]. Got it? Now, follow the `v>^<` instructions to make sure our conversion did things correctly. Does it work?
+****
+
+Our `goto!` command depends on pacman-bot's initial position, startX and startY, which, in other words, is pacman-bots initial state. It also needs to be given the targetX and targetY, which are pacman-bot's final target position (or end state). We can think of our `goto!` command as "taking pacman-bot from some initial state to some target state."
+
+What if we wanted to implement Language Z now `(find! object)`?
+
+First off... we need some extra information.  Whereas before, we were given the location to go to as part of the instructions, ex. `(goto! 2 4)`, now we will be given an object, either the cherry or the ghost, so we will need to know their locations. Lets call the cherry's location `cherryX` and `cherryY`, and the ghost's location `ghostX` and `ghostY`.
+
+We could implement the `(find! object)` command as follows:
+
+----
+given startX is some number indicating pacman-bot's starting X position
+given startY is some number indicating pacman-bot's starting Y position
+given cherryX is some number indicating the cherry's starting X position
+given cherryY is some number indicating the cherry's starting Y position
+given ghostX is some number indicating the ghost's starting X position
+given ghostY is some number indicating the ghost's starting Y position
+
+(find! object) means:
+   if object is cherry:
+     if cherryX is greater than startX:
+        repeat ">" (cherryX - startX) times
+     if cherryX is less than startX:
+        repeat "<" (startX - cherryX) times
+     if cherryY is greater than startY:
+        repeat "v" (cherryY - startY) times
+     if cherryY is less than startY:
+        repeat "^" (startY - cherryY) times
+   if object is ghost:
+     if ghostX is greater than startX:
+        repeat ">" (ghostX - startX) times
+     if ghostX is less than startX:
+        repeat "<" (startX - ghostX) times
+     if ghostY is greater than startY:
+        repeat "v" (ghostY - startY) times
+     if ghostY is less than startY:
+        repeat "^" (startY - ghostY) times
+----
+
+Our instructions here are very similar to what we had before with `(goto! x y)`. They're also very repetitive.
+
+What if we could just use `(goto! x y)` inside of our `(find! object)` command? What might that look like?
+
+.Exercise
+****
+Try to rewrite our `find!` command using `goto!`.
+****
+
+
+Here's what we might end up with:
+
+----
+given we have startX, startY, cherryX, cherryY, ghostX, ghostY as defined before
+
+given we have `goto!` as defined before
+
+(find! object) means:
+  if object is cherry:
+    (goto! cherryX cherryY)
+  if object is ghost:
+    (goto! ghostX ghostY)
+----
+
+Bam! That's all we need. Ponder it for a moment.
+
+What we've done is pretty impressive. We've written rules so we can convert from `(find! object)` to `(goto! x y)` to `v>^<` style instructions.
+
+Another way to think about it, is that we've written instructions at "different levels of abstractions" (from chapter 1, remember?)
+
+  find!
+   |
+ goto!
+/ | | \
+v > ^ <
+
+
+Later, we'll learn that the `find!` and `goto!` commands we defined would typically be called `functions`. `v`, `>`, `^` and `<` could also be called `functions`, except in our examples, `v>^<` were provided to us by the pacman-bot system, while `find!` and `goto!` we created ourselves.
+
+Defining `functions` that call other `functions` (that call other `functions`...) is one of the primary activites of "real world" programming.
+
+
+
+=== Inputs and Outputs
+
+One thing to notice about the functions we made up in the previous chapter is that some of them require some information to be passed in, while others could be written on their own (for example, `goto` needed an X and Y, while `v` did not). We can think of those values as "inputs" to the functions (later we'll also hear them called "parameters", but for now, lets stick to "inputs").
+
+With our pacman-bot system, we had an initial state (the positions of pacman-bot, the cherry and the ghost) and our `goto!` and `find!` function would change (or "transition") the state into a new state by moving pacman-bot to a new location.
+
+We can say that our `goto!` and `find!` functions have "side effects" (ie. running them causes a change in the state of the system)
+
+Can we have functions without "side effects"? Would that ever be useful in a language?
+
+What if... we had functions, which, instead of changing the system state, could just "return" the value of some calculation. For example:
+
+----
+(subtract x y) means:
+  return the result of subtracting y from x (ie. x - y)
+----
+
+If we were to write `(subtract 5 2)` it would "return" `3`.
+
+If we defined:
+----
+(divide x y) means:
+  return the result of dividing x and y (ie. x / y)
+----
+
+Then, `(divide 15 5)` would "return" `3`.
+
+We can think of the "return" values of a function as the "output" of the function.
+
+// [diagram]
+
+Could we maybe allow for the output of a function to be used as an input? Perhaps we could write something like this:
+
+----
+(divide 21 (subtract 8 1))
+----
+
+...which we would say "returns" `3` because: `(subtract 8 1)` returns `7`, and `(divide 21 7)` returns `3`.
+
+This is getting interesting.
+
+Perhaps we could write a function that combines our `divide` and `subtract` functions? How about this:
+
+----
+(slope x1 y1 x2 y2) means:
+  return the result of:  (divide (subtract y2 y1) (subtract x2 x1))
+----
+
+Instead of changing the state of some surrounding system, our `divide`, `subtract` and `slope` functions are just "returning" values. What's the use of these "returned values"? To use an "inputs" to other functions!
+
+Presumably, at some point, we would want some side effects (say, like, printing out the result of a calculation to the screen), but, we could probably get a lot done just with functions that don't change state.
+
+(Read this later: Appendix X: Avoiding State)
+
+In the future, we will refer to functions that don't change state as "pure" functions, and ones that do as "stateful" or "impure" functions.
+
+=== Function Review
+
+We can now think of functions as certain instructions that a system can understand, which optionally take some inputs, optionally return some values, and optionally change some state:
+
+//[function diagram]
+
+-
+-       -
+-
+    *
+
+There are some functions that a system provides for us (like `v>^<` from our pacman-bot example) and others that we write ourselves, using the system functions, to make our lives easier (like `goto!` and `slope`).
+
+We can now think of a "program" as a function of functions (...of functions ...of functions):
+
+//[program built from functions diagram]
+
+Like the functions inside of it, the "program" function may take some input, change state, and return some output.
+
+For example, a simple program could take in a number and two currencies and return you the result of convesting from one currency to another based on today's exchange rate. A more complicated program might take some input (say, mouse clicks and keyboard button presses) and change the display of the screen to let you play a game.
+
+We're almost ready to starting learning Clojure proper, we just have one more concept to cover: "data".
+
+=== Data
+
+Let's go back to our `find!` "program"/"function" that we wrote for the pacman-bot system.
+
+`find!` would take an object as input (cherry or ghost) and change the state of the pacman-bot system so that pacman-bot would end up in the same position as the specified object. It would make use of the `v><^` functions, which were provided by the system. It also needed to know the positions of pacman-bot, the cherry and the ghost (which were provided by the system as `startX`, `cherryX`, `ghostX`...)
+
+The input object and the positions pacman-bot, the cherry and the ghost were all pieces of information that our `find!` program needed to function. We refer to these kinds of pieces of information, in a broad sense, as "data".
+
+Real world programs deal with a lot of data - lists of friends, blog posts, photos, addresses of businesses - and as a programmer, much of what you will be doing is transforming, combining, seperating and recombining data (using functions!).
+
+In our programs, data will be used in various ways:
+  - as inputs into our program (ex. a stream of Twitter updates), so that we can write one program and use it with different sets of data
+  - passed into functions and returned from functions
+  - to represent the state of the system (ex. the positions of the objects in our pacman-bot system)
+  - as a "hardcoded" reference to help our programs do what they need to do (for example, a table to from months-of-the-year in english to their numerical equivalents)
+
+There are infinite kinds of data we might want to handle in a program, but, it turns out, we can represent almost any kind of information using two building blocks of data: (1) primitive values, such as numbers and text (2) compound values, such as vectors, and maps.
+
+## Primitive Values
+
+Primitive values are the simplest forms of data; they are the atoms of the programming world. They include numbers (such as `1` and `1.5`), "strings" (which represent text, such as `"hello"` and `"goodbye"`) and other types of things called "booleans", "symbols" and "nil". Let's take a look at each.
+
+### Numbers
+
+Numbers are exactly what they say they are, and in most programming languages you just write them as they are. Clojure, which is the language we'll be using for the rest of this book understands three kinds of numbers:
+
+Integers (ex. `25`)
+
+Decimals (ex. `23.234`) (also called "doubles", "floats", "longs" in some languages)
+
+Fractions (ex. `7/23`)
+
+From now on, we'll just refer to these as "numbers".
+
+### Strings
+
+"Strings" represent text. It can be a single character: `"a"`, a word: `"elephant"`, a sentence: `"This is a string"`, or the entire corpus of Shakespeare's works: (uhhh... to save space, we'll skip the example for this one).
+
+In Clojure, as in most programming languages, strings are written with quotation marks around them, like so: `"hello again!"`. The quotation marks are necessary to help differentiate strings from names of functions in our program (so, `goto!` would be the function, while `"goto!"` would just be the text).  In a similar vein, `2` is the number 2, while `"2"` is a string - they are completely different things, as far as Clojure is concerned.
+
+### Booleans
+
+"Booleans" is a fancy programmer for the concepts of `true` and `false`. In Clojure, that's exactly how we write them: `true` and `false`. They come in handy for representing certain information (ex. is John person late? `true`), as results of comparisons (ex. is 3 greater than 5? `false`) and as return values from functions (ex. `(even? 5)` `false`).
+
+Just to make it super clear, `true` is not the same things as `"true"` (the first is a boolean, the second is a string).
+
+### nil
+
+"nil" is a special value that represents the "lack of a value" or "nothingness". In math, that honor is usually bestowed to `0`, but because `0` is a number, it ends up being very useful to have a way to say "nothing". In Clojure, you can write it simply as `nil`.
+
+### keywords
+
+"Keywords" are a text labels that we will use in our programs to help us name things (we'll see them very soon in maps). For example, we might have a program that deals with colors, which we could represent in Clojure with keywords as so: `:red`, `:white`, `:green`, `:purple`.
+
+Keywords might seem similar to strings (and in some languages, there are no keywords), but they're not meant to be "broken down" like strings; with a string, we might ask for the 10th character, or count the number of characters, or count the number of words, or split a string into seperate words -- these operations can't be done with keywords. Strings can be thought of as a "collection of characters" while keywords are just a handy label to use in our programs.
+
+If the distinction is confusing, don't worry about it. If you use strings instead of keywords, your programs will still work.
+
+## compound values
+
+Primitive values are nice, but we often need to deal with collections of values, and that's where "vectors" and "maps" come in. If primitive values were atoms of the programming world, then "compound values" are the molecules.
+
+### vectors
+
+"Vectors" are ordered lists of values. For example, here is a vector of numbers in Clojure: `[10 4 2 6]`, and here is a vector of strings and numbers: `[1 "hello" 4 "goodbye"]`.
+
+In other languages, you may also hear vectors referred to as "lists", "arrays" or "sequences".
+
+Being able to store values in lists ends up being very, very useful. Vectors will also allow us to add values to them, remove values, do something for each value inside, and retrieve values based on their position.
+
+Vectors can also contain non-primitive values, such as other vectors: `[1 2 3 ["four" [:five]]]`
+
+### maps
+
+"Maps" are like dictionaries - they contain a list of "keys", each of which correpsondings to a certain "value". In a dictionary, the "keys" are the words and the "values" are the definitions.
+
+Here is an example of an (abridged) dictionary in Clojure, written as a map of strings to strings:
+
+----
+{ "Chair"  "A piece of furniture used for sitting."
+  "Orange" "A citrus fruit or color."
+  "Guitar" "A musical instrument." }
+----
+
+Just as with a dictionary, we can lookup the corresponding definition ("value") to a word ("key"). We could do this by writing: `(dictionary "chair")` which would return `"A piece of furniture used for sitting"`.
+
+Maps end up being useful for representing lots of different real world data, such as people: `{ :name "Bob" :age 23 }` or places: `{ :name "Ghost Town" :population 0 }`
+
+Maps can have any values as "keys" and any values as "values". This is a totally legitamate map:
+
+----
+{ [1 2] "one two"
+  :three "three"
+  {} nil }
+----
+
+
+## other types
+
+There are more types that we can use in Clojure than I've mentioned, but the ones we know will do for now, and we'll see the others in the future (notably: "sets", "datetimes" and "uuids").
+
+
+## putting things together
+
+Now that we know various kinds of values that we can work with, let's represent some non-trivial data using them.
+
+.Exercise
+****
+How might we represent the countries of the world, their areas, populations and capital cities?
+****
+
+Here's one way:
+
+----
+[
+  { :name "Canada"
+    :population 1234
+    :area 4567
+    :capital "Toronto" }
+
+  { :name "China"
+    :population 2345
+    :area 5678
+    :capital "Beijing" }
+
+  ...
+]
+----
+
+.Exercise
+****
+Try coming up with ways of representing the following data sets:
+
+  - a contact list (each with names, an email and multiple phone numbers)
+  - a shopping receipt
+  - a count of how many times each letter occurs in a piece of text
+****
+
+
+=== Enter Clojure
+
+
+
+
+=== Solving Problems with Programming
+
+identify:
+  inputs
+  outputs
+  other required information
+
+  any steps
+
+
+  start 'top-down'
+  do what you know
+
+  test
+
+  don't worry about perfect: make things work, then make things right
+
+TODO: work through a few exercises
