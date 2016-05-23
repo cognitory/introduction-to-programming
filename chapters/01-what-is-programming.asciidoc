@@ -137,7 +137,7 @@ Let's take the role of designers of this system. As the designers, we want to pr
 
 .Exercise
 ****
-Try to come up with a set of instructions that someone else could use to instruct Pacman to move around the board.
+Try to come up with a set of instructions that someone else could use to instruct pacman-bot to move around the board.
 ****
 
 .Exercise
