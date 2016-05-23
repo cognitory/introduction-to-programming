@@ -15,33 +15,37 @@ Or perhaps, you've been "programmed" before, and didn't even realize:
  - played a song from some sheet music
  - written a todolist for yourself (whoah... programming yourself)
 
-[options="header"]
-|======
-| Programmer  | Processor  | Interface           | Language    | Inputs                        | Result
-|  you        | microwave  | microwave buttons   | numbers (?) | 1:00 time, 50% power, start!  | turns on
-|======
+.Figure
+[horizontal]
+*Programmer*::
+  you
+*Processor*::
+  microwave
+*Interface*::
+  microwave buttons
+*Language*::
+  numbers   (?)
+*Inputs*::
+  1:00 time, 50% power, start!
+*Result*::
+  - turns on when you press start!
+  - runs at 50% power for 1:00 minute
+  - turns off
 
-----
-- programmer: you
-  processor:  microwave
-  interface:  microwave buttons
-  language:   numbers   (?)
-  inputs:     1:00 time, 50% power, start!
-  result: |
-              turns on when you press start!
-              runs at 50% power for 1:00 minute
-              turns off
-
-- programmer: you
-  processor:  your friend
-  interface:  text
-  language:   english
-
-  inputs:     a list of steps in english
-  result: |
-
-
-----
+.Figure
+[horizontal]
+*Programmer*::
+  you
+*Processor*::
+  your friend
+*Interface*::
+  text
+*Language*::
+  english
+*Inputs*::
+  a list of steps in english
+*Result*::
+  - TODO
 
 what to do vs. how to do it
   depends on where you draw the bounds
