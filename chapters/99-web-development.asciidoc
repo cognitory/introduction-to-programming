@@ -1,5 +1,3 @@
-== Web Development
-
 Understanding the systems we'll be using:
  - browser
     - HTML
