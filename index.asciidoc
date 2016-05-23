@@ -1,5 +1,6 @@
 Introduction to Programming
 ===========================
+:toc:
 :doctype: book
 
 include::chapters/01-what-is-programming.asciidoc[]
