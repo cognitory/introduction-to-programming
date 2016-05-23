@@ -458,6 +458,7 @@ The input object and the positions pacman-bot, the cherry and the ghost were all
 Real world programs deal with a lot of data -- lists of friends, blog posts, photos, addresses of businesses -- and as a programmer, much of what you will be doing is transforming, combining, seperating and recombining data (using functions!).
 
 In our programs, data will be used in various ways:
+
   - as inputs into our program (ex. a stream of Twitter updates), so that we can write one program and use it with different sets of data
   - passed into functions and returned from functions
   - to represent the state of the system (ex. the positions of the objects in our pacman-bot system)
