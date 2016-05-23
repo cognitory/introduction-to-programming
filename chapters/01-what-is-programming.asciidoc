@@ -120,8 +120,8 @@ In this book, we're going to be learning "how to program computers that understa
 interface: text
 language: clojure
 
-(appendix: why clojure)
-(appendix: programming interfaces)
+<<_why_clojure>>
+<<_programming_interfaces>>
 
 But before we start understanding Clojure, Run Times, Operating Systems and Browsers, which are all very complex systems, we'll make a few more observations about systems and instructions using a simple made-up system.
 
