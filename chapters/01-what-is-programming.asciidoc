@@ -455,7 +455,7 @@ Let's go back to our `find!` ``program''/``function'' that we wrote for the pacm
 
 The input object and the positions pacman-bot, the cherry and the ghost were all pieces of information that our `find!` program needed to function. We refer to these kinds of pieces of information, in a broad sense, as ``data''.
 
-Real world programs deal with a lot of data - lists of friends, blog posts, photos, addresses of businesses - and as a programmer, much of what you will be doing is transforming, combining, seperating and recombining data (using functions!).
+Real world programs deal with a lot of data -- lists of friends, blog posts, photos, addresses of businesses -- and as a programmer, much of what you will be doing is transforming, combining, seperating and recombining data (using functions!).
 
 In our programs, data will be used in various ways:
   - as inputs into our program (ex. a stream of Twitter updates), so that we can write one program and use it with different sets of data
