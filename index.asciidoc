@@ -1,7 +1,5 @@
 Introduction to Programming
 ===========================
-:stylesdir: ./stylesheets
-:linkcss: true
 
 include::chapters/01-what-is-programming.asciidoc[]
 

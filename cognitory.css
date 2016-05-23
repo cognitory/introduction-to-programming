@@ -1,9 +1,18 @@
 body {
-  font-family: "Hoefler Text";
+  font-family: "Gentium Plus";
   max-width: 35em;
   margin: 0 auto;
-  line-height: 1.25;
+  line-height: 1.5;
   font-size: 18px;
+}
+
+.toclevel1 {
+
+}
+
+.toclevel2 {
+  margin: 0 0 0 1em;
+
 }
 
 pre, p code {
@@ -22,18 +31,17 @@ p code {
 
 }
 code {
-  font-family: "Consolas";
+  font-family: "PragmataPro";
 }
 
-.sidebarblock {
+.openblock {
 }
-.sidebarblock .content {
-  border-left: 1px solid #ccc;
+.openblock .content {
+  border-left: 2px solid #ccc;
   margin-left: 1em;
   padding-left: 1em;
-
 }
-.sidebarblock .content .title {
+.openblock .content .title {
   font-weight: bold;
 }
 
