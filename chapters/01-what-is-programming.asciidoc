@@ -137,7 +137,8 @@ We program to solve a certain problem using a certain system. The system we choo
 
 Here is a system:
 
-//[ PACMAN-BOT BOARD ]
+.Figure
+TODO: PACMAN-BOT BOARD
 
 Let's take the role of designers of this system. As the designers, we want to provide other people the ability to program Pacman-bot to move around the board (presumably to get the Cherry and avoid the Ghosts, but who knows what people will come up with). How might we allow people to program Pacman-bot?
 
