@@ -50,25 +50,26 @@ Or perhaps, you've been "programmed" before, and didn't even realize:
 what to do vs. how to do it
   depends on where you draw the bounds
 
-  microwave:
-    what: make some chocolate chip cookies
-    how: 1) gather the following materials: ...
-         2) gather the following tools: ...
-         3) mix together ... in a bowl
-         4) scoop onto a pan
-         5) bake in a preheated oven at 450 for 20 minutes
 
-   what: mix together ... in a bowl
-   how: 1) place empty bowl on counter
-        2) add ... cups of ... into bowl
-        3) add ... spoons of ... into bowl
-        4) ...
-        5) mix with a wooden spoon
+microwave:
+  what: make some chocolate chip cookies
+  how: 1) gather the following materials: ...
+       2) gather the following tools: ...
+       3) mix together ... in a bowl
+       4) scoop onto a pan
+       5) bake in a preheated oven at 450 for 20 minutes
 
-   what: mix with a wooden spoon
-   how: 1) insert spoon into bowl with ingredients
-        2) move spoon in a circular motion
-        3) stop when you can no longer tell ingredients apart
+ what: mix together ... in a bowl
+ how: 1) place empty bowl on counter
+      2) add ... cups of ... into bowl
+      3) add ... spoons of ... into bowl
+      4) ...
+      5) mix with a wooden spoon
+
+ what: mix with a wooden spoon
+ how: 1) insert spoon into bowl with ingredients
+      2) move spoon in a circular motion
+      3) stop when you can no longer tell ingredients apart
 
 
 can do this with any set of instructions
