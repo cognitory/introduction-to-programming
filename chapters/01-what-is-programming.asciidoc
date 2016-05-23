@@ -516,13 +516,13 @@ Primitive values are nice, but we often need to deal with collections of values,
 
 ===== vectors
 
-``Vectors'' are ordered lists of values. For example, here is a vector of numbers in Clojure: `[10 4 2 6]`, and here is a vector of strings and numbers: `[1 ``hello'' 4 ``goodbye'']`.
+``Vectors'' are ordered lists of values. For example, here is a vector of numbers in Clojure: `[10 4 2 6]`, and here is a vector of strings and numbers: `[1 "hello" 4 "goodbye"]`.
 
 In other languages, you may also hear vectors referred to as ``lists'', ``arrays'' or ``sequences''.
 
 Being able to store values in lists ends up being very, very useful. Vectors will also allow us to add values to them, remove values, do something for each value inside, and retrieve values based on their position.
 
-Vectors can also contain non-primitive values, such as other vectors: `[1 2 3 [``four'' [:five]]]`
+Vectors can also contain non-primitive values, such as other vectors: `[1 2 3 ["four" [:five]]]`
 
 ===== maps
 
@@ -531,20 +531,20 @@ Vectors can also contain non-primitive values, such as other vectors: `[1 2 3 [`
 Here is an example of an (abridged) dictionary in Clojure, written as a map of strings to strings:
 
 ----
-{ ``Chair''  ``A piece of furniture used for sitting."
-  ``Orange'' ``A citrus fruit or color."
-  ``Guitar'' ``A musical instrument." }
+{ "Chair"  "A piece of furniture used for sitting."
+  "Orange" "A citrus fruit or color."
+  "Guitar" "A musical instrument." }
 ----
 
-Just as with a dictionary, we can lookup the corresponding definition (``value'') to a word (``key''). We could do this by writing: `(dictionary ``chair'')` which would return ```A piece of furniture used for sitting''`.
+Just as with a dictionary, we can lookup the corresponding definition (``value'') to a word (``key''). We could do this by writing: `(dictionary "chair")` which would return ```A piece of furniture used for sitting''`.
 
-Maps end up being useful for representing lots of different real world data, such as people: `{ :name ``Bob'' :age 23 }` or places: `{ :name ``Ghost Town'' :population 0 }`
+Maps end up being useful for representing lots of different real world data, such as people: `{ :name "Bob" :age 23 }` or places: `{ :name "Ghost Town" :population 0 }`
 
 Maps can have any values as ``keys'' and any values as ``values''. This is a totally legitamate map:
 
 ----
-{ [1 2] ``one two''
-  :three ``three''
+{ [1 2] "one two"
+  :three "three"
   {} nil }
 ----
 
@@ -567,15 +567,15 @@ Here's one way:
 
 ----
 [
-  { :name ``Canada''
+  { :name "Canada"
     :population 1234
     :area 4567
-    :capital ``Toronto'' }
+    :capital "Toronto" }
 
-  { :name ``China''
+  { :name "China"
     :population 2345
     :area 5678
-    :capital ``Beijing'' }
+    :capital "Beijing" }
 
   ...
 ]
