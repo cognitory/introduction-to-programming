@@ -251,7 +251,7 @@ Before we move on from pacman-bot, let's try the following: can we convert betwe
 nX means repeat "^" X times
 wX means repeat "<" X times
 eX means repeat ">" X times
-sX means repeat ``v'' X times
+sX means repeat "v" X times
 ----
 
 Can you see how the rules above would allow us to convert from `n5e3w1` to `^^^^^>>><`?
