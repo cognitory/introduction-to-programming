@@ -27,8 +27,8 @@ pre {
 }
 p code {
   font-size: 0.85em;
-  padding: 0.25em;
-
+  padding: 0.4em;
+  white-space: nowrap;
 }
 code {
   font-family: "PragmataPro";
