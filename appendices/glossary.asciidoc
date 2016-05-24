@@ -1,0 +1,28 @@
+== Glossary
+
+[glossary]
+Code (v)::
+Code (n)::
+Program (n)::
+Program (v)::
+Programming (n)::
+Function (n)::
+Function (v)::
+String (n)::
+Comment (n)::
+Test (n)::
+Test (v)::
+Test Driven Development (n)::
+Parameter (n)::
+Abstract (v)::
+Side Effect (n)::
+Return (v)::
+Returned Value (n)::
+Input (n)::
+Output (n)::
+Pure Function (n)::
+Data (n)::
+Boolean (n)::
+Nil (n)::
+Map (n)::
+Map (v)::

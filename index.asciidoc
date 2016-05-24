@@ -54,6 +54,8 @@ include::appendices/choosing-an-editor.asciidoc[]
 [appendix]
 include::appendices/resources.asciidoc[]
 
+[appendix]
+include::appendices/glossary.asciidoc[]
 
 
 
