@@ -369,7 +369,7 @@ v > ^ <
 
 Later, we'll learn that the `find!` and `goto!` commands we defined would typically be called `functions`. `v`, `>`, `^` and `<` could also be called `functions`, except in our examples, `v>^<` were provided to us by the pacman-bot system, while `find!` and `goto!` we created ourselves.
 
-Defining `functions` that call other `functions` (that call other `functions`...) is one of the primary activites of ``real world'' programming.
+Defining ``functions'' that call other ``functions'' (that call other ``functions''...) is one of the primary activites of ``real world'' programming.
 
 
 
