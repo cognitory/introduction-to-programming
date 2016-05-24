@@ -469,7 +469,7 @@ There are infinite kinds of data we might want to handle in a program, but, it t
 
 ==== Primitive Values
 
-Primitive values are the simplest forms of data; they are the atoms of the programming world. They include numbers (such as `1` and `1.5`), ``strings'' (which represent text, such as `"hello"` and `"goodbye"`) and other types of things called ``booleans'', ``symbols'' and ``nil''. Let's take a look at each.
+Primitive values are the simplest forms of data; they are the atoms of the programming world. They include numbers (such as `1` and `1.5`), ``strings'' (which represent text, such as `"hello"` and `"goodbye"`) and other types of things called ``booleans'', ``keywords'' and ``nil''. Let's take a look at each.
 
 ===== Numbers
 
