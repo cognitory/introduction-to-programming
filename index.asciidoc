@@ -9,6 +9,7 @@ include::chapters/01-what-is-programming.asciidoc[]
 == Web Development
 include::chapters/99-web-development.asciidoc[]
 
+
 // APPENDICES
 
 [appendix]
@@ -25,7 +26,6 @@ include::appendices/exercises.asciidoc[]
 
 [appendix]
 include::appendices/avoiding-state.asciidoc[]
-
 
 [appendix]
 include::appendices/text-encoding.asciidoc[]
