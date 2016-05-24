@@ -245,7 +245,7 @@ A few things to notice:
 
 Later in this book we will be learning about the Clojure language and all the instructions it supports and how we can combine them to solve problems.
 
-Before we move on from pacman-bot, let's try the following: can we convert between the different pacman-bot languages? If someone gave us pacman-bot that only understood Language X (`v>^<`) could we still program pacman-bot to understand a Language Y program (`n5e3w1`)? If `v>^<` are the only instructions that Language X allows, then the answer is ``no," at least not directly, but we could write another system that could convert from Language Y to Language X. It might look something like this:
+Before we move on from pacman-bot, let's try the following: can we convert between the different pacman-bot languages? If someone gave us pacman-bot that only understood Language X (`v>^<`) could we still program pacman-bot to understand a Language Y program (`n5e3w1`)? If `v>^<` are the only instructions that Language X allows, then the answer is ``no'', at least not directly, but we could write another system that could convert from Language Y to Language X. It might look something like this:
 
 ----
 nX means repeat "^" X times
