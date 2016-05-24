@@ -393,6 +393,7 @@ What if... we had functions, which, instead of changing the system state, could 
 If we were to write `(subtract 5 2)` it would ``return'' `3`.
 
 If we defined:
+
 ----
 (divide x y) means:
   return the result of dividing x and y (ie. x / y)
