@@ -10,6 +10,29 @@ img {
   max-width: 100%;
 }
 
+p {
+  margin: 1em 0;
+}
+
+h1, h2, h3, h4, h5 {
+  font-weight: bold;
+}
+
+strong {
+  font-weight: bold;
+}
+
+em {
+  font-style: italic;
+}
+
+
+ul {
+  list-style: circle;
+}
+li {
+  margin-left: 3em;
+}
 
 .toclevel1 {
 
