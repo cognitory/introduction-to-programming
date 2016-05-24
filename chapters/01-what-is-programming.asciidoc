@@ -375,7 +375,7 @@ Defining ``functions'' that call other ``functions'' (that call other ``function
 
 === Functions
 
-One thing to notice about the functions we made up in the previous chapter is that some of them require some information to be passed in, while others could be written on their own (for example, `goto` needed an X and Y, while `v` did not). We can think of those values as ``inputs'' to the functions (later we'll also hear them called ``parameters'', but for now, lets stick to ``inputs'').
+One thing to notice about the functions we made up in the previous chapter is that some of them require some information to be passed in, while others could be written on their own (for example, `goto` needed an `X` and `Y`, while `v` did not). We can think of those values as ``inputs'' to the functions (later we'll also hear them called ``parameters'', but for now, lets stick to ``inputs'').
 
 With our pacman-bot system, we had an initial state (the positions of pacman-bot, the cherry and the ghost) and our `goto!` and `find!` function would change (or ``transition'') the state into a new state by moving pacman-bot to a new location.
 
