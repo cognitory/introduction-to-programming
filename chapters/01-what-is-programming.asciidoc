@@ -20,13 +20,15 @@ Or perhaps, you've been ``programmed'' before, and didn't even realize:
  - played a song from some sheet music
  - written a todolist for yourself (whoah... programming yourself)
 
+// TODO: segway into figures
+
 .Figure
 [horizontal]
 *Programmer*::
   you
 *Processor*::
   microwave
-*Interface*::
+*Programming Interface*::
   microwave buttons
 *Language*::
   numbers   (?)
@@ -37,13 +39,14 @@ Or perhaps, you've been ``programmed'' before, and didn't even realize:
   - runs at 50% power for 1:00 minute
   - turns off
 
+// TODO
 .Figure
 [horizontal]
 *Programmer*::
   you
 *Processor*::
   your friend
-*Interface*::
+*Programming Interface*::
   text
 *Language*::
   english
@@ -52,32 +55,39 @@ Or perhaps, you've been ``programmed'' before, and didn't even realize:
 *Result*::
   - TODO
 
+// TODO segway...
+
 what to do vs. how to do it
   depends on where you draw the bounds
 
-
 microwave:
-  what: make some chocolate chip cookies
-  how: 1) gather the following materials: ...
-       2) gather the following tools: ...
-       3) mix together ... in a bowl
-       4) scoop onto a pan
-       5) bake in a preheated oven at 450 for 20 minutes
+  what:
+    make some chocolate chip cookies
+  how:
+    1. gather the following materials: ...
+    2. gather the following tools: ...
+    3. mix together ... in a bowl
+    4. scoop onto a pan
+    5. bake in a preheated oven at 450 for 20 minutes
 
- what: mix together ... in a bowl
- how: 1) place empty bowl on counter
-      2) add ... cups of ... into bowl
-      3) add ... spoons of ... into bowl
-      4) ...
-      5) mix with a wooden spoon
+  what:
+   mix together ... in a bowl
+  how:
+    1. place empty bowl on counter
+    2. add ... cups of ... into bowl
+    3. add ... spoons of ... into bowl
+    4. ...
+    5. mix with a wooden spoon
 
- what: mix with a wooden spoon
- how: 1) insert spoon into bowl with ingredients
-      2) move spoon in a circular motion
-      3) stop when you can no longer tell ingredients apart
+ what:
+   mix with a wooden spoon
+ how:
+   1. insert spoon into bowl with ingredients
+   2. move spoon in a circular motion
+   3. stop when you can no longer tell ingredients apart
 
 
-can do this with any set of instructions
+can do this what/how/what/how breakdown with any set of instructions
 
 ``levels of abstraction''
 
@@ -110,6 +120,13 @@ The last observation is especially important. To program a system, you must know
 
 --
 .Exercise
+Come up with a few examples
+--
+// football coach writing down a play
+// scriptwriter writing a movie script
+
+--
+.Exercise
 Fill in the table for the other examples
 --
 
@@ -117,6 +134,7 @@ Fill in the table for the other examples
 
 In this book, you'll be learning ``how to program'', and more specifically, ``how to program computers''. But even that needs clarifying; there are hundreds of different kinds of ``computers'' (desktops, labtops, tablets, phones, watches, cars, refrigerators), and each is composed of hundreds of interoperating systems. (appendix: down the computer rabbit hole)
 
+// TODO: clean this up
 In this book, we're going to be learning ``how to program computers that understand Clojure'':
   (1) Java Run Time -> POSIX-compatible operating systems (... Mac, Linux, Windows, Android)
          CRUD files, sockets, memory
@@ -126,7 +144,10 @@ In this book, we're going to be learning ``how to program computers that underst
 interface: text
 language: clojure
 
+// TODO: aside mention:
 <<_why_clojure>>
+
+// TODO: aside mention:
 <<_programming_interfaces>>
 
 But before we start understanding Clojure, Run Times, Operating Systems and Browsers, which are all very complex systems, we'll make a few more observations about systems and instructions using a simple made-up system.
@@ -228,6 +249,8 @@ With Set 5 we might do:
 n5w2n5
 ----
 
+// TODO create a table that shows the language sets and sample code beside them
+
 --
 .Exercise
 Try doing it with the other sets.
@@ -256,11 +279,17 @@ sX means repeat "v" X times
 
 Can you see how the rules above would allow us to convert from `n5e3w1` to `^^^^^>>><`?
 
+// TODO will need to add an extra step here, jumping all the way to goto is too fast
+
 Now how about converting from Language Z `(goto! x y)` to Language Y `v>^>`? Ponder that for a moment.
 
 Hmmm...
 
-We have a problem. In order to make pacman-bot follow the `(goto! 5 3)` instruction using the `v>^<` instructions, we need to know where pacman-bot is before we give him the command. Before, with Language X, we were able to blindly convert from on language to another, but this time, we need some information first (pacman-bots starting location).
+We have a problem. In order to make pacman-bot follow the `(goto! 5 3)` instruction using the `v>^<` instructions, we need to know where pacman-bot is before we give him the command. Before, with Language X, we were able to blindly convert from one language to another, but this time, we need some information first (pacman-bot's starting location).
+
+// TODO start with an actual example, before the startX variables
+
+// repeat diagram with X and Y columns labeled
 
 Lets refer to pacman bot's starting location as startX and startY (so, for figure1 we would say that startX is 3 and startY is 5).
 
@@ -429,6 +458,10 @@ Presumably, at some point, we would want some side effects (say, like, printing 
 (Read this later: Appendix X: Avoiding State)
 
 In the future, we will refer to functions that don't change state as ``pure'' functions, and ones that do as ``stateful'' or ``impure'' functions.
+
+
+// TODO: analogy from math
+// TODO: analogy from Excel
 
 ==== Title
 
