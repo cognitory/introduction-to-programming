@@ -451,7 +451,7 @@ Perhaps we could write a function that combines our `divide` and `subtract` func
   return the result of:  (divide (subtract y2 y1) (subtract x2 x1))
 ----
 
-Instead of changing the state of some surrounding system, our `divide`, `subtract` and `slope` functions are just ``returning'' values. What's the use of these ``returned values''? To use an ``inputs'' to other functions!
+Instead of changing the state of some surrounding system, our `divide`, `subtract` and `slope` functions are just ``returning'' values. What's the use of these ``returned values''? To use as ``inputs'' to other functions!
 
 Presumably, at some point, we would want some side effects (say, like, printing out the result of a calculation to the screen), but, we could probably get a lot done just with functions that don't change state.
 
@@ -477,7 +477,7 @@ image::figures/function-of-functions.svg[]
 
 Like the functions inside of it, the ``program'' function may take some input, change state, and return some output.
 
-For example, a simple program could take in a number and two currencies and return you the result of convesting from one currency to another based on today's exchange rate. A more complicated program might take some input (say, mouse clicks and keyboard button presses) and change the display of the screen to let you play a game.
+For example, a simple program could take in a number and two currencies and return you the result of converting from one currency to another based on today's exchange rate. A more complicated program might take some input (say, mouse clicks and keyboard button presses) and change the display of the screen to let you play a game.
 
 We're almost ready to starting learning Clojure proper, we just have one more concept to cover: ``data''.
 
