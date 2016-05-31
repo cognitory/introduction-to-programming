@@ -408,7 +408,26 @@ One thing to notice about the functions we made up in the previous chapter is th
 
 With our pacman-bot system, we had an initial state (the positions of pacman-bot, the cherry and the ghost) and our `goto!` and `find!` function would change (or ``transition'') the state into a new state by moving pacman-bot to a new location.
 
+// TODO: clarify what is meant by state
+
+// TODO: add some exercises to identify "state" in different scenarios
+
+BASKETBALL
+	position of all players (and their team)
+		orientation
+	position of the goals
+	size of the court
+	position of the ball
+	points of each team
+	# of fouls
+	time
+
+// TODO add function examples for side effects (shoot!) and not side effects (team-of :bob) (time-up?)
+
+
 We can say that our `goto!` and `find!` functions have ``side effects'' (ie. running them causes a change in the state of the system)
+
+// TODO a bit more on side effects
 
 Can we have functions without ``side effects''? Would that ever be useful in a language?
 
@@ -459,13 +478,18 @@ Presumably, at some point, we would want some side effects (say, like, printing 
 
 In the future, we will refer to functions that don't change state as ``pure'' functions, and ones that do as ``stateful'' or ``impure'' functions.
 
+// TODO: add exercise, list a bunch of functions, have reader identify if they are pure or stateful
 
 // TODO: analogy from math
 // TODO: analogy from Excel
 
+// TODO reveal using of ! to indicate stateful function
+
 ==== Title
 
 We can now think of functions as certain instructions that a system can understand, which optionally take some inputs, optionally return some values, and optionally change some state:
+
+// TODO: label diagram
 
 image::figures/a-function.svg[]
 
@@ -481,9 +505,14 @@ For example, a simple program could take in a number and two currencies and retu
 
 We're almost ready to starting learning Clojure proper, we just have one more concept to cover: ``data''.
 
+
+// TODO add some exercises for this section
+
 === Data
 
 Let's go back to our `find!` ``program''/``function'' that we wrote for the pacman-bot system.
+
+// TODO show the find function here
 
 `find!` would take an object as input (cherry or ghost) and change the state of the pacman-bot system so that pacman-bot would end up in the same position as the specified object. It would make use of the `v><^` functions, which were provided by the system. It also needed to know the positions of pacman-bot, the cherry and the ghost (which were provided by the system as `startX`, `cherryX`, `ghostX`...)
 
