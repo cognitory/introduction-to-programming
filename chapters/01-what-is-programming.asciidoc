@@ -312,7 +312,7 @@ given startY is some number indicating pacman-bot's starting Y position
    if targetX is less than startX:
       repeat "<" (startX - targetX) times
    if targetY is greater than startY:
-      repeat ``v'' (targetY - startY) times
+      repeat "v" (targetY - startY) times
    if targetY is less than startY:
       repeat "^" (startY - targetY) times
 ----
@@ -345,7 +345,7 @@ given ghostY is some number indicating the ghost's starting Y position
      if cherryX is less than startX:
         repeat "<" (startX - cherryX) times
      if cherryY is greater than startY:
-        repeat ``v'' (cherryY - startY) times
+        repeat "v" (cherryY - startY) times
      if cherryY is less than startY:
         repeat "^" (startY - cherryY) times
    if object is ghost:
@@ -354,7 +354,7 @@ given ghostY is some number indicating the ghost's starting Y position
      if ghostX is less than startX:
         repeat "<" (startX - ghostX) times
      if ghostY is greater than startY:
-        repeat ``v'' (ghostY - startY) times
+        repeat "v" (ghostY - startY) times
      if ghostY is less than startY:
         repeat "^" (startY - ghostY) times
 ----
