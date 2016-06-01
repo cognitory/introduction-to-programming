@@ -651,6 +651,13 @@ Try coming up with ways of representing the following data sets:
   - a count of how many times each letter occurs in a piece of text
 --
 
+--
+.Exercise
+Represent state of the following systems:
+ - pacman-bot
+ - basketball game
+ - other systems you came up with in <previous chapter exercise>
+--
 
 == Enter Clojure
 
