@@ -410,7 +410,6 @@ With our pacman-bot system, we had an initial state (the positions of pacman-bot
 
 // TODO: clarify what is meant by state
 
-// TODO: add some exercises to identify "state" in different scenarios
 
 BASKETBALL
 	position of all players (and their team)
@@ -423,6 +422,9 @@ BASKETBALL
 	time
 
 // TODO add function examples for side effects (shoot!) and not side effects (team-of :bob) (time-up?)
+
+
+// TODO: add some exercises to identify "state" in different scenarios
 
 
 We can say that our `goto!` and `find!` functions have ``side effects'' (ie. running them causes a change in the state of the system)
