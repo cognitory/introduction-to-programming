@@ -633,12 +633,24 @@ Here's one way:
   { :name "Canada"
     :population 1234
     :area 4567
-    :capital "Toronto" }
+    :capital "Toronto"
+    :cities [{:name "Toronto"
+              :area 456
+              :population 1252}
+             {:name "Montreal"
+              :area 512
+              :population 1262}]}
 
   { :name "China"
     :population 2345
     :area 5678
-    :capital "Beijing" }
+    :capital "Beijing"
+    :cities [{:name "Beijing"
+              :area 123
+              :population 1235}
+             {:name "Shanghai"
+              :area 456
+              :population 542}]}
 
   ...
 ]
