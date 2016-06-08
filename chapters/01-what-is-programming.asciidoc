@@ -533,19 +533,19 @@ There are infinite kinds of data we might want to handle in a program, but, it t
 
 ==== Primitive Values
 
-Primitive values are the simplest forms of data; they are the atoms of the programming world. They include numbers (such as `1` and `1.5`), ``strings'' (which represent text, such as `"hello"` and `"goodbye"`) and other types of things called ``booleans'', ``keywords'' and ``nil''. Let's take a look at each.
+Primitive values are the simplest forms of data; you can think of them as the atoms of the programming world. They include numbers (such as `1` and `1.5`), ``strings'' (which represent text, such as `"hello"` and `"goodbye"`) and other types of things called ``booleans'', ``keywords'' and ``nil''. Let's take a look at each.
 
 ===== Numbers
 
-Numbers are exactly what they say they are, and in most programming languages you just write them as they are. Clojure, which is the language we'll be using for the rest of this book understands three kinds of numbers:
+Numbers are exactly what they say they are: numerical values. Clojure, which is the language we'll be using for the rest of this book understands three kinds of numbers:
 
 Integers (ex. `25`)
 
-Decimals (ex. `23.234`) (also called ``doubles'', ``floats'', ``longs'' in some languages)
+Decimals (ex. `23.234`) (also called ``doubles'', ``floats'', and ``longs'' in some languages)
 
 Fractions (ex. `7/23`)
 
-From now on, we'll just refer to these as ``numbers''.
+From now on, we'll refer to all three of these forms as ``numbers''.
 
 ===== Strings
 
@@ -555,17 +555,17 @@ In Clojure, as in most programming languages, strings are written with quotation
 
 ===== Booleans
 
-``Booleans'' is a fancy programmer for the concepts of `true` and `false`. In Clojure, that's exactly how we write them: `true` and `false`. They come in handy for representing certain information (ex. is John person late? `true`), as results of comparisons (ex. is 3 greater than 5? `false`) and as return values from functions (ex. `(even? 5)` `false`).
+``Booleans'' is a fancy programmer for the concepts of `true` and `false`. In Clojure, that's exactly how we write them: `true` and `false`. They come in handy for representing certain information (ex. is John late? -> `true`), as results of comparisons (ex. is 3 greater than 5? -> `false`) and as return values from functions (ex. `(even? 5)` -> `false`).
 
 Just to make it super clear, `true` is not the same things as `"true"` (the first is a boolean, the second is a string).
 
 ===== nil
 
-``nil'' is a special value that represents the ``lack of a value'' or ``nothingness''. In math, that honor is usually bestowed to `0`, but because `0` is a number, it ends up being very useful to have a way to say ``nothing''. In Clojure, you can write it simply as `nil`.
+``nil'' is a special value that represents the ``lack of a value'' or ``nothingness''. In math, that honor is usually bestowed to `0`, but because `0` is already number, it ends up being very useful to have a way to say ``nothing''. In Clojure, you can write it simply as `nil`.
 
 ===== keywords
 
-``Keywords'' are a text labels that we will use in our programs to help us name things (we'll see them very soon in maps). For example, we might have a program that deals with colors, which we could represent in Clojure with keywords as so: `:red`, `:white`, `:green`, `:purple`.
+``Keywords'' are text labels that we will use in our programs to help us name things (we'll see them very soon in maps). For example, we might have a program that deals with colors, which we could represent in Clojure with keywords as so: `:red`, `:white`, `:green`, `:purple`.
 
 Keywords might seem similar to strings (and in some languages, there are no keywords), but they're not meant to be ``broken down'' like strings; with a string, we might ask for the 10th character, or count the number of characters, or count the number of words, or split a string into seperate words -- these operations can't be done with keywords. Strings can be thought of as a ``collection of characters'' while keywords are just a handy label to use in our programs.
 
@@ -573,7 +573,7 @@ If the distinction is confusing, don't worry about it. If you use strings instea
 
 ==== compound values
 
-Primitive values are nice, but we often need to deal with collections of values, and that's where ``vectors'' and ``maps'' come in. If primitive values were atoms of the programming world, then ``compound values'' are the molecules.
+Primitive values are nice, but we often need to deal with collections of values, and that's where ``vectors'' and ``maps'' come in. If primitive values were the atoms of the programming world, then ``compound values'' are the molecules.
 
 ===== vectors
 
@@ -587,9 +587,9 @@ Vectors can also contain non-primitive values, such as other vectors: `[1 2 3 ["
 
 ===== maps
 
-``Maps'' are like dictionaries - they contain a list of ``keys'', each of which correpsondings to a certain ``value''. In a dictionary, the ``keys'' are the words and the ``values'' are the definitions.
+``Maps'' are like real-world dictionaries; they contain a list of ``keys'', each of which correponds to a certain ``value''. In a real-world dictionary, the ``keys'' are the words and the ``values'' are the definitions.
 
-Here is an example of an (abridged) dictionary in Clojure, written as a map of strings to strings:
+Here is an example of an (abridged) real-world dictionary in Clojure, written as a map of strings to strings:
 
 ----
 { "Chair"  "A piece of furniture used for sitting."
@@ -597,7 +597,7 @@ Here is an example of an (abridged) dictionary in Clojure, written as a map of s
   "Guitar" "A musical instrument." }
 ----
 
-Just as with a dictionary, we can lookup the corresponding definition (``value'') to a word (``key''). We could do this by writing: `(dictionary "chair")` which would return ```A piece of furniture used for sitting''`.
+Just as with a real-world dictionary, we can lookup the corresponding definition (``value'') to a word (``key''). We could do this by writing: `(dictionary "chair")` which would return `"A piece of furniture used for sitting"`.
 
 Maps end up being useful for representing lots of different real world data, such as people: `{ :name "Bob" :age 23 }` or places: `{ :name "Ghost Town" :population 0 }`
 
