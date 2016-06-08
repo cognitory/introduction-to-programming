@@ -563,6 +563,8 @@ Just to make it super clear, `true` is not the same things as `"true"` (the firs
 
 ``nil'' is a special value that represents the ``lack of a value'' or ``nothingness''. In math, that honor is usually bestowed to `0`, but because `0` is already number, it ends up being very useful to have a way to say ``nothing''. In Clojure, you can write it simply as `nil`.
 
+// TODO: give an example
+
 ===== keywords
 
 ``Keywords'' are text labels that we will use in our programs to help us name things (we'll see them very soon in maps). For example, we might have a program that deals with colors, which we could represent in Clojure with keywords as so: `:red`, `:white`, `:green`, `:purple`.
@@ -613,6 +615,9 @@ Maps can have any values as ``keys'' and any values as ``values''. This is a tot
 ==== other types
 
 There are more types that we can use in Clojure than I've mentioned, but the ones we know will do for now, and we'll see the others in the future (notably: ``sets'', ``datetimes'' and ``uuids'').
+
+
+// TODO aside: mention different naming conventions, camel case, snake case, kebab-case
 
 
 ==== putting things together
