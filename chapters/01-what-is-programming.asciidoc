@@ -624,10 +624,7 @@ There are more types that we can use in Clojure than I've mentioned, but the one
 
 Now that we know various kinds of values that we can work with, let's represent some non-trivial data using them.
 
---
-.Exercise
 How might we represent the countries of the world, their areas, populations and capital cities?
---
 
 Here's one way:
 
