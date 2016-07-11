@@ -1,1 +1,11 @@
 == Why Clojure
+
+
+
+
+
+
+less syntax:
+  semicolons, commas
+
+

@@ -1,5 +1,19 @@
 == Programming Exercises
 
+
+password obfuscator
+  given a string replace each occurence
+  handle uppercae and lowercase
+    a -> 4
+    e -> 3
+    o -> 0
+    l -> 1
+
+
+
+
+
+
 bound
 count words in a file
 count occurence of each character in a file
@@ -31,7 +45,10 @@ sudoku solver
 mastermind game (w/ cheating ai)
 implement the pacman-bot system
 
+game of life
 
+
+xor, nor, and, or
 
 
 
