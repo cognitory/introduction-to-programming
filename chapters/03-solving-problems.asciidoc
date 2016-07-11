@@ -1,0 +1,168 @@
+== Enter Clojure
+
+It's now time to being learning Clojure proper.
+
+As we had discussed in Chp 1, a programming language consists of two broad concepts:
+ - the various commands that you can call
+ - the rules of how to write and combine the commands (the "syntax")
+
+In this chapter, we will learn a few Clojure commands, but focus mostly on how commands are written and how they can be combined. We'll then start using Clojure to solve simple problems. Over the next few chapters we will gradually introduce more and more of the functions that Clojure has built-in and use them to solve increasingly difficult problems.
+
+=== Clojure Syntax
+
+A Clojure program is written as text and is composed of "values", "forms", and "symbols". The text that is
+
+"Values" are text that represents data. We spent all of the previous chapter discussing values. Here's a number: `1`, a string: `"hello!"`, and vector of numbers: `[1 2 3]`
+
+Symbols are text that are used to name things and refer to things that have been named. For example, we could give the vector `["Monday" "Tuesday" "Wednesday" "Thursday" "Friday" "Saturday" "Sunday"]` the name `days-of-the-week` and later refer to it as `days-of-the-week` instead of writing it all out again (we'll cover this in more detail very soon).
+
+A "form" is unit of code that contains values, forms and/or symbols. It is a set of brackets surrounding some content.
+  Here is any empty "form": `()`.
+  Here is a form with 3 numbers: `(1 2 3)`
+  Here is a form with 2 numbers and a vector of numbers: `(1 2 [3 4])`
+  Here are two forms, one after the other: `("a" "b" "c") (1 2 3)`
+  Here is a form within a form: `(1 (2) 3)`
+  Here is a form with a 2 symbols and a string `(println "Hello" name)`
+
+A Clojure "program" is a text file that contains one or more forms, values or symbols.
+Each form can contain one or more forms, values or symbols.
+
+...and that's it for the syntax.
+
+// TODO: exercise to recognize parts of program given some syntax
+
+=== Clojure Functions
+
+In Chapter 1, we discussed how languages define a set of commands that the programmer can call, and if the syntax allows for it, a way to create our own commands (which we called "functions") that are named combinations of the provided commands and/or our own commands.
+
+To start, we will learn X of Clojure's built-in "commands":
+
+
+`print`
+
+`(print "Happy Monday "Bob!")`
+
+`let`
+
+`(let [name "Bob"]
+      ...
+       )`
+
+
+`fn`
+
+`+`
+
+`/`
+
+
+
+
+
+
+
+
+if
+when
+
+map
+
+
+
+(let [blah (fn []  )]
+
+)
+
+
+
+// the plan:
+//    introduce one or a few functions
+//    give sample of the functions work
+//    use new functions (plus earlier functions) to solve a problem (walk through)
+//    give a few problem to solve as exercise (+ hint at required functions)
+//    repeat
+
+
+== Morse Code
+  print
+  def
+  defn
+  ->>
+  split
+  map
+  join
+
+
+(defn str->vec [s]
+  (clojure.string/split s ""))
+
+(defn vec->str [v]
+  (clojure.string/join "" v))
+
+(def lookup
+  {"s" "..."
+   "o" "---"})
+
+(defn char->morse [char]
+  (get lookup char))
+
+(defn text->morse [text]
+  (->> text
+       str->vec
+       (map char->morse)
+       vec->str))
+
+(text->morse "hello world")
+
+== Merge Sort
+
+
+
+```
+(defn merge [coll-a coll-b]
+
+
+)
+
+(defn merge-sort [coll]
+  (if (<= (count coll) 2)
+    coll
+    (let [[a b] (split-at (/ (count coll) 2) coll)]
+      (concat (merge-sort a) (merge-sort b)))))
+```
+
+
+== Character Frequency
+
+
+
+== Average
+  reduce (or apply)
+
+
+
+
+
+== Solving Problems with Programming
+
+identify:
+  inputs
+  outputs
+  other required information
+
+  any steps
+
+
+  start 'top-down'
+
+  making up names of functions
+
+  do what you know
+
+  test
+
+  don't worry about perfect: make things work, then make things right
+
+TODO: work through a few exercises
+
+
