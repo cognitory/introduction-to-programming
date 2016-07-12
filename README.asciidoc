@@ -1,24 +1,29 @@
 = Introduction to Programming
 
-Introduction to Programming is a book introducing the concepts of programming to non-programmers (using Clojure and Functional Programming style).
+Introduction to Programming is a book that aims to teach programming to non-programmers.
 
 
-== Rationale
+== Rationale (Why Another Programming Book?)
 
-Most existing “Learn Clojure” and “Learn Functional Programming” books target existing programmers and are completely inaccessible to beginners to programming.
+Most “Introduction to Programming” books teach C-like languages and Object Oriented Programming (ex. Java, Javascript, etc.) because these languages are popular. This book teaches Functional Programming with a LISP, because, as I have experienced through my teaching career, FP and LISP are much easier to learn for beginners.
 
-Most “Introduction to Programming” books teach C-like and/or OOP languages (Ruby, Javascript, etc.), which from my teaching experience, are much harder to learn than Lisps and FP languages.
+Most existing “Learn Functional Programming” or “Learn LISP” books target existing programmers, because it tends to be only experienced programmers who discover and appreciate FP and LISP. However, because they are targeted at existing programmers, these books are completely inaccessible to beginners to programming. This book teaches FP concepts and LISP, but targets beginners.
 
-The journey of many programmers seems
-
+Experienced developers gravitate to Functional Programming and LISP because they make programming easier. Novice programmers have even more to benefit from the simplicity of FP and LISP.
 
 == Approach
 
-The primary goal of this book is to teach a novice how to solve problems with “programming”.
+The primary goal of this book is to teach a complete novice how to solve practical problems with “programming”.
 
-A Functional Programming approach is taught, but, only insofar as it makes it easier to learn programming (ex. avoiding state, pure functions). The aim is not to be a comprehensive introduction to Functional Programming, hence why Clojure is used, instead of a pure functional language, like, say, Haskell. Also, many “theoretical” concepts from FP, such as monads will be skipped.
+A Functional Programming approach is taught, because FP concepts (such as pure functions and a general avoidance of state) make it easier to write programs and to learn to program. However, the aim of this book is *not* to be a comprehensive introduction to Functional Programming, so many “advanced” concepts from FP, such as currying and monads, will not be covered.
 
-Clojure is the language used for teaching, because: (1) LISP syntax is very easy to learn for beginners, (2) it is practical (can be used anywhere Java or Javascript are). However, like with FP, this book will only cover Clojure insofar as it is useful for teaching a beginner to program. “Advanced” concepts such as macros will be skipped.
+A LISP-style language is used, because LISP syntax is simpler and more consistent than C-like languages, and so it is easier to learn for beginners. Of the various LISPs, Clojure is used, because it has a strong ecosystem and can run on many platforms. However, like with FP, this book will only cover Clojure insofar as it is useful for teaching a beginner to program. “Advanced” concepts such as macros and protocols will not be covered.
+
+In summary:
+
+  - The purpose of this book is to teach programming to complete beginners.
+  - Contrary to the way things seem, LISP and FP are ideal for novice programmers.
+  - FP and LISP are just a means to an end, not the end itself.
 
 
 == About the Authors
@@ -28,7 +33,7 @@ Rafal Dittwald - engineer, developer, programming instructor, entrepreneur
 
 == Setup
 
-`brew install asciidoc`
+`brew install asciidoc` or `gem install asciidoctor`
 
 Then:
 
