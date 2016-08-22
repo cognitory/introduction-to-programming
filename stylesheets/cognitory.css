@@ -1,9 +1,15 @@
+html {
+  background: #ededed;
+}
 body {
   font-family: "Gentium Plus";
-  max-width: 35em;
+  background: #fff;
+  max-width: 32em;
+  padding: 6em;
   margin: 0 auto;
   line-height: 1.5;
   font-size: 18px;
+  box-shadow: 0 0 2px 2px #ddd;
 }
 
 img {
@@ -15,8 +21,14 @@ p {
 }
 
 h1, h2, h3, h4, h5 {
-  font-weight: bold;
+  font-weight: 900;
 }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
 
 strong {
   font-weight: bold;
@@ -41,12 +53,14 @@ li {
   margin: 0 0 0 1em;
 }
 
-pre, p code {
-  background: black;
+pre, p code, .monospace {
+  font-family: "PragmataPro", "Courier New", "monospace";
+  background: #1d203f;
   color: white;
   border-radius: 0.25em;
   font-size: 0.85em;
 }
+
 pre {
   display: inline-block;
   min-width: 10em;
@@ -56,15 +70,11 @@ p code {
   padding: 0.4em;
   white-space: nowrap;
 }
-code {
-  font-family: "PragmataPro";
-}
 
 .openblock {
 }
 .openblock .content {
-  border-left: 2px solid #ccc;
-  margin-left: 1em;
+  border-left: 1em solid #ccd0f6;
   padding-left: 1em;
 }
 .openblock .content .title {
@@ -79,4 +89,16 @@ code {
 }
 .sect3 {
   margin-top: 2em;
+}
+
+table {
+  margin: 0 auto;
+}
+th {
+  font-weight: bold;
+  text-align: left;
+}
+th, td {
+  padding: 0 0.5em;
+  border: 1px solid #ccc;
 }
