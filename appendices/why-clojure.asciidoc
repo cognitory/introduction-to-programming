@@ -5,7 +5,24 @@
 
 
 
-less syntax:
-  semicolons, commas
+LISP = less syntax:
+  just `(fn arg arg)` + some data types
+  no semicolons, no commas
+  ie. more time learning functions and "thinking like a progammer"; less on fighting compiler
+
+
+
+
+REPL
+
+practical
+
+
+
+reach
+
+
+
+
 
 
