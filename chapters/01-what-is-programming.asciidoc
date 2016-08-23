@@ -346,7 +346,7 @@ Now how about converting from Language Z `(goto! x y)` to Language Y `v>^>`? Pon
 
 Hmmm...
 
-We have a problem. In order to make pacman-bot follow the `(goto! 1 3)` instruction using the `v>^<` instructions, we need to know where pacman-bot is before we give him the command. Before, with Language X, we were able to blindly convert from one language to another, but this time, we need some information first (pacman-bot's starting location).
+We have a problem. In order to make pacman-bot follow the `(goto! 3 1)` instruction using the `v>^<` instructions, we need to know where pacman-bot is before we give him the command. Before, with Language X, we were able to blindly convert from one language to another, but this time, we need some information first (pacman-bot's starting location).
 
 // TODO start with an actual example, before the pacmanX variables
 
@@ -357,7 +357,7 @@ In our pacmanbot-system, pacmanbot's location is at `(x,y) = (3,4)`.
 
 Lets refer to pacman bot's starting location as pacmanX and pacmanY (so, for figure1 we would say that pacmanX is 3 and pacmanY is 4).
 
-Now, back to our problem: how do we go from an instruction like `(goto! 1 3)` to `v>^<` style instructions? (knowing that pacman-bot starts at `pacmanX` and `pacmanY`)
+Now, back to our problem: how do we go from an instruction like `(goto! 3 1)` to `v>^<` style instructions? (knowing that pacman-bot starts at `pacmanX` and `pacmanY`)
 
 --
 .Exercise
@@ -383,7 +383,9 @@ given pacmanY is some number indicating pacman-bot's starting Y position
 
 --
 .Exercise
-Follow the rules above to convert from `(goto! 2 4)` to `v>^<` instructions, given that pacman-bot starts at his location in Figure 1: [3, 5]. Got it? Now, follow the `v>^<` instructions to make sure our conversion did things correctly. Does it work?
+Follow the rules above to convert from `(goto! 3 1)` to `v>^<` instructions, given that pacman-bot starts at his location in Figure 1: [3, 4].
+
+Got it? Now, follow the `v>^<` instructions to make sure our conversion did things correctly. Does it work?
 --
 
 Our `goto!` command depends on pacman-bot's initial position (`pacmanX` and `pacmanY`), which we could also say is pacman-bots “initial state”.
@@ -391,7 +393,7 @@ The command also needs to be given the `targetX` and `targetY`, which are pacman
 
 What if we wanted to implement Language Z now `(find! object)`?
 
-First off... we need some extra information.  Whereas before, we were given the location to go to as part of the instructions, ex. `(goto! 2 4)`, now we will be given an object, either the cherry or the ghost, so we will need to know their locations. Lets call the cherry's location `cherryX` and `cherryY`, and the ghost's location `ghostX` and `ghostY`.
+First off... we need some extra information.  Whereas before, we were given the location to go to as part of the instructions, ex. `(goto! 3 1)`, now we will be given an object, either the cherry or the ghost, so we will need to know their locations. Lets call the cherry's location `cherryX` and `cherryY`, and the ghost's location `ghostX` and `ghostY`.
 
 We could implement the `(find! object)` command as follows:
 
@@ -472,9 +474,9 @@ With our pacman-bot system, we had an initial state (the positions of pacman-bot
 
 |===
 | State of Pacman-bot System | Example
-| position of pacman | (2,3)
-| position of ghost  | (3,5)
-| position of cherry | (4,6)
+| position of pacman | (3,4)
+| position of ghost  | (3,2)
+| position of cherry | (3,1)
 |===
 
 
