@@ -596,15 +596,13 @@ We're almost ready to starting learning Clojure proper, we just have one more co
 
 Let's think back to our `find!` “program”/“function” that we wrote for the pacman-bot system.
 
-// TODO show the find function here
-
----
+```
 (find! object) means:
   if object is cherry:
     (goto! cherryX cherryY)
   if object is ghost:
     (goto! ghostX ghostY)
----
+```
 
 `find!` would take an object as input (cherry or ghost) and change the state of the pacman-bot system so that pacman-bot would end up in the same position as the specified object. It would make use of the `v><^` functions, which were provided by the system. It also needed to know the positions of pacman-bot, the cherry and the ghost (which were provided by the system as `pacmanX`, `cherryX`, `ghostX`...)
 
