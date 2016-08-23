@@ -218,10 +218,8 @@ forward back left right
 forward
 forward
 left
-left
 forward
 right
-forward
 ----
 
 | B
@@ -229,9 +227,13 @@ forward
 ----
 up down left right
 ----
+(from pacman's point of view)
 |
 ----
-//TODO
+up
+up
+down
+right
 ----
 
 
@@ -252,8 +254,11 @@ forward rotate-right
 ----
 |
 ----
-//TODO
-TODO
+forward
+rotate-right
+forward
+forward
+rotate-right
 ----
 
 
@@ -276,8 +281,8 @@ n5w2n5
 (where x and y are integers corresponding to the row and column, respectively)
 |
 ----
-//TODO
-TODO
+(goto! 1 4)
+(goto! 1 1)
 ----
 
 | G
