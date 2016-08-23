@@ -312,11 +312,9 @@ What we've come up with are programming languages! They are very limited, but, y
 
 (Also worth noting: all the examples above are text-based instruction languages, but you could also have come up with visual instruction systems (drawing a map, using colors, using pictograms), a sound-based system, a hand gesture system... anything)
 
-Lets try using each language to get pacman-bot to the cherry based on the board in [figure x]:
-
 --
 .Exercise
-Try doing it with the other sets.
+For each language, write down the instructions to get pacman from his starting location to the cherry.
 --
 
 A few things to notice:
