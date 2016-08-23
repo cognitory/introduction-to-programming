@@ -2,6 +2,8 @@
 
 Introduction to Programming is a book that aims to teach programming to non-programmers.
 
+You can read the latest version at: http://cognitory.github.io/introduction-to-programming/
+
 
 == Rationale (Why Another Programming Book?)
 
