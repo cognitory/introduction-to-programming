@@ -1,0 +1,1832 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 1.5.4">
+<title>Introduction to Programming</title>
+<style>
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+html {
+  background: #ededed;
+}
+body {
+  font-family: "Gentium Plus";
+  background: #fff;
+  max-width: 32em;
+  padding: 6em;
+  margin: 0 auto;
+  line-height: 1.5;
+  font-size: 18px;
+  box-shadow: 0 0 2px 2px #ddd;
+}
+
+img {
+  max-width: 100%;
+}
+
+p {
+  margin: 1em 0;
+}
+
+h1, h2, h3, h4, h5 {
+  font-weight: 900;
+}
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+
+strong {
+  font-weight: bold;
+}
+
+em {
+  font-style: italic;
+}
+
+
+ul {
+  list-style: circle;
+}
+li {
+  margin-left: 3em;
+}
+
+.toclevel1 {
+
+}
+.toclevel2 {
+  margin: 0 0 0 1em;
+}
+
+pre, p code, .monospace {
+  font-family: "PragmataPro", "Courier New", "monospace";
+  background: #1d203f;
+  color: white;
+  border-radius: 0.25em;
+  font-size: 0.85em;
+}
+
+pre {
+  display: inline-block;
+  min-width: 10em;
+  padding: 0.8em;
+}
+p code {
+  padding: 0.4em;
+  white-space: nowrap;
+}
+
+.openblock {
+}
+.openblock .content {
+  border-left: 1em solid #ccd0f6;
+  padding-left: 1em;
+}
+.openblock .content .title {
+  font-weight: bold;
+}
+
+.sect1 {
+  margin-top: 8em;
+}
+.sect2 {
+  margin-top: 4em;
+}
+.sect3 {
+  margin-top: 2em;
+}
+
+table {
+  margin: 0 auto;
+}
+th {
+  font-weight: bold;
+  text-align: left;
+}
+th, td {
+  padding: 0 0.5em;
+  border: 1px solid #ccc;
+}
+
+</style>
+</head>
+<body class="book">
+<div id="header">
+<h1>Introduction to Programming</h1>
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_what_is_programming">What is programming?</a>
+<ul class="sectlevel2">
+<li><a href="#_what_vs_how">What vs. How</a></li>
+<li><a href="#_chapter_title">Chapter Title</a></li>
+</ul>
+</li>
+<li><a href="#_enter_the_pacman">Enter the Pacman</a>
+<ul class="sectlevel2">
+<li><a href="#_instructions_and_abstraction_ii">Instructions and Abstraction II</a></li>
+</ul>
+</li>
+<li><a href="#_functions">Functions</a>
+<ul class="sectlevel2">
+<li><a href="#_title">Title</a></li>
+</ul>
+</li>
+<li><a href="#_data">Data</a>
+<ul class="sectlevel2">
+<li><a href="#_primitive_values">Primitive Values</a></li>
+<li><a href="#_compound_values">compound values</a></li>
+<li><a href="#_other_types">other types</a></li>
+</ul>
+</li>
+<li><a href="#_enter_clojure">Enter Clojure</a>
+<ul class="sectlevel2">
+<li><a href="#_clojure_syntax">Clojure Syntax</a></li>
+<li><a href="#_clojure_functions">Clojure Functions</a></li>
+</ul>
+</li>
+<li><a href="#_solving_problems">Solving Problems</a>
+<ul class="sectlevel2">
+<li><a href="#_morse_code">Morse Code</a></li>
+<li><a href="#_merge_sort">Merge Sort</a></li>
+<li><a href="#_character_frequency">Character Frequency</a></li>
+<li><a href="#_average">Average</a></li>
+</ul>
+</li>
+<li><a href="#_web_development">Web Development</a></li>
+<li><a href="#_programming_interfaces">Appendix A: Programming Interfaces</a></li>
+<li><a href="#_why_clojure">Appendix B: Why Clojure</a></li>
+<li><a href="#_down_the_computer_rabbit_hole">Appendix C: Down the Computer Rabbit Hole</a></li>
+<li><a href="#_programming_exercises">Appendix D: Programming Exercises</a></li>
+<li><a href="#_avoiding_state">Appendix E: Avoiding State</a></li>
+<li><a href="#_text_encoding">Appendix F: Text Encoding</a></li>
+<li><a href="#_regular_expressions">Appendix G: Regular Expressions</a></li>
+<li><a href="#_clojure_style_guide">Appendix H: Clojure Style Guide</a></li>
+<li><a href="#_clojure_cheatsheet">Appendix I: Clojure Cheatsheet</a></li>
+<li><a href="#_debugging">Appendix J: Debugging</a></li>
+<li><a href="#_refactoring">Appendix K: Refactoring</a></li>
+<li><a href="#_test_driven_development">Appendix L: Test Driven Development</a></li>
+<li><a href="#_choosing_an_editor">Appendix M: Choosing an Editor</a></li>
+<li><a href="#_resources">Appendix N: Resources</a></li>
+<li><a href="#_glossary">Appendix O: Glossary</a></li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect1">
+<h2 id="_what_is_programming">What is programming?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>“Programming” is the act of creating instructions for a system on what to do or how to behave.</p>
+</div>
+<div class="paragraph">
+<p>Notice that the above definition mentions nothing about “computers” or “writing code”. “Writing code for computers” happens to be the most common form of programming, but we can learn a lot about programming without throwing “computers” or “code” into the mix.</p>
+</div>
+<div class="paragraph">
+<p>It&#8217;s likely that you&#8217;re already a programmer, but you probably don&#8217;t realize it. Have you ever:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>set the microwave to run for 1:00 minute at 50% power?</p>
+</li>
+<li>
+<p>set an alarm clock?</p>
+</li>
+<li>
+<p>texted directions to a friend on how to get someplace?</p>
+</li>
+<li>
+<p>written down a recipe for your special chocolate chip cookies?</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>If so, then you&#8217;ve programmed already.</p>
+</div>
+<div class="paragraph">
+<p>It&#8217;s also likely that you&#8217;ve been on the receiving end of a program, that is, you&#8217;ve “been programmed” before:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>built a Lego set according to instructions</p>
+</li>
+<li>
+<p>folded some origami according to instructions</p>
+</li>
+<li>
+<p>played a song from sheet music</p>
+</li>
+<li>
+<p>written a todolist for yourself</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Lets break down a few of these situations.</p>
+</div>
+<div class="paragraph">
+<p>A <strong>programmer</strong> gets a <strong>system</strong> to perform <strong>side effects</strong> by providing a <strong>program</strong> via an <strong>interface</strong>.</p>
+</div>
+<div class="hdlist">
+<div class="title">Figure</div>
+<table>
+<tr>
+<td class="hdlist1">
+<strong>Programmer</strong>
+</td>
+<td class="hdlist2">
+<p>you</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<strong>System</strong>
+</td>
+<td class="hdlist2">
+<p>microwave</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<strong>Interface</strong>
+</td>
+<td class="hdlist2">
+<p>buttons or dials</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<strong>Program</strong>
+</td>
+<td class="hdlist2">
+<p>1:00 time, 50% power</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<strong>Side Effects</strong>
+</td>
+<td class="hdlist2">
+<div class="ulist">
+<ul>
+<li>
+<p>turns on when you press start!</p>
+</li>
+<li>
+<p>runs at 50% power for 1:00 minute</p>
+</li>
+<li>
+<p>turns off</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="hdlist">
+<div class="title">Figure</div>
+<table>
+<tr>
+<td class="hdlist1">
+<strong>Programmer</strong>
+</td>
+<td class="hdlist2">
+<p>you</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<strong>System</strong>
+</td>
+<td class="hdlist2">
+<p>your friend</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<strong>Interface</strong>
+</td>
+<td class="hdlist2">
+<p>SMS message (freeform english text)</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<strong>Program</strong>
+</td>
+<td class="hdlist2">
+<p>ex.
+  Take Hwy 102 south
+  Exit on Fake St.
+  Turn left on Imaginary Blvd.
+  Turn right on Nowhere Rd.
+  House # is 55.</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<strong>Side Effects</strong>
+</td>
+<td class="hdlist2">
+<p>friend finds his way to your home</p>
+</td>
+</tr>
+</table>
+</div>
+<div class="openblock">
+<div class="content">
+<div class="paragraph">
+<div class="title">Exercise</div>
+<p>Fill in the table for the other examples</p>
+</div>
+</div>
+</div>
+<div class="openblock">
+<div class="content">
+<div class="paragraph">
+<div class="title">Exercise</div>
+<p>Come up with a few examples</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_what_vs_how">What vs. How</h3>
+<div class="paragraph">
+<p>Our original definition of programming [ref], mentions that the instructions we create while programming describe <strong>what</strong> a system should do or <strong>how</strong> it should behave.</p>
+</div>
+<div class="paragraph">
+<p>The difference between the two is very subtle.</p>
+</div>
+<div class="paragraph">
+<p>Consider a cookie recipe:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>Cookie Recipe:
+  what:
+    make some chocolate chip cookies
+  how:
+    1. gather the following materials: ...
+    2. gather the following tools: ...
+    3. mix together ... in a bowl
+    4. scoop onto a pan
+    5. bake in a preheated oven at 450 for 20 minutes</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Each of the above steps assumes the reader knows how to perform each of the actions (mix, scoop, etc.).</p>
+</div>
+<div class="paragraph">
+<p>Notice how each “how” step could be treated as a “what”, and broken down further:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>  what:
+   mix together ... in a bowl
+  how:
+    1. place empty bowl on counter
+    2. add ... cups of ... into bowl
+    3. add ... spoons of ... into bowl
+    4. ...
+    5. mix with a wooden spoon</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code> what:
+   mix with a wooden spoon
+ how:
+   1. insert spoon into bowl with ingredients
+   2. move spoon in a circular motion
+   3. stop when you can no longer tell ingredients apart</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>We could keep going deeper and deeper&#8230;&#8203;</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>   |
+   --
+  /  \
+ /\  /\
+/\/\/\/\</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In practice, we stop at some point; where we stop depends on what level of instructions we expect the “system” that is processing the instructions to understand.</p>
+</div>
+<div class="paragraph">
+<p>For our cookie recipe, if you are writing it for a friend who has baked before, (1) is probably sufficient, but for someone who has never stepped inside a kitchen, you may need to go a level or two deeper. If you&#8217;re trying to create a cookie making robot, you&#8217;d need to get down to the level of “emit a 5V signal on this wire for 0.5s” (to turn on a motor, to move the arm, to pick up the spoon&#8230;&#8203;)</p>
+</div>
+<div class="paragraph">
+<p>Also notice that the language that is used varies; an experienced cook probably knows what “braising” means, but a beginner would need that explained; a pianist knows what “allegro” means, but most people don&#8217;t; these domain-specific terms are used to save time. When you need to explain something, you adapt your language based on what your audience understand. It&#8217;s the same with programming - a programmer needs to adapt their language to what the processor (be it a computer or an aspiring chef) can understand.</p>
+</div>
+<div class="paragraph">
+<p>“levels of abstraction”</p>
+</div>
+<div class="paragraph">
+<p>We&#8217;ve already made a few important observations about programming:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>programmer</p>
+</li>
+<li>
+<p>systems that process instructions (of various forms)</p>
+</li>
+<li>
+<p>instructions (following various rules, “languages”)</p>
+</li>
+<li>
+<p>instructions can be written at various levels of abstraction
+a “what” broken down into a number of “how” steps
+or, a group of “how” steps “abstracted” into a “what”</p>
+</li>
+<li>
+<p>a programmer needs to know what the system understands to be able to create instructions for the system</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The last observation is especially important. To program a system, you must know what a system can do and what instructions it understands. Most of programming is learning about various systems that can be programming and <em>then</em> applying that knowledge to make those systems do what you want.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_chapter_title">Chapter Title</h3>
+<div class="paragraph">
+<p>There are hundreds of different kinds of “computers” (desktops, laptops, tablets, phones, watches, cars, refrigerators), and each is composed of hundreds of interoperating systems. (ref appendix: down the computer rabbit hole)
+Fortunately, much of what programming entails is transferable between different programmable systems.</p>
+</div>
+<div class="paragraph">
+<p>In this book, you&#8217;ll be learning the basics of “how to program”, or perhaps more accurately, to learn to “think like a programmer”.</p>
+</div>
+<div class="paragraph">
+<p>What you will be programming, and the language you&#8217;ll be programming in doesn&#8217;t really matter. But&#8230;&#8203; in order to teach you how to program (in general), this book will also teach you how to program web applications with a real, practical programming language: Clojure [ref: .
+<a href="#_why_clojure">Why Clojure</a>].</p>
+</div>
+<div class="paragraph">
+<p>But before we start learning Clojure proper, let&#8217;s make a few more observations about systems and instructions using a simple made-up system.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_enter_the_pacman">Enter the Pacman</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_instructions_and_abstraction_ii">Instructions and Abstraction II</h3>
+<div class="paragraph">
+<p>We write programs to solve a certain <strong>problem</strong> using a certain <strong>system</strong>. The system we choose contrains us in the way we can program it, and the problem we choose constrains in the way we solve it.</p>
+</div>
+<div class="paragraph">
+<p>Our program is the mediator between these two domains (the “problem” domain and the “solution” domain) and will often be made of many layers (of abstraction, as we had learned in the previous chapter).</p>
+</div>
+<div class="paragraph">
+<p>Here is a Pacman-bot system:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="figures/pacmanbot-system-board.svg" alt="pacmanbot system board">
+</div>
+<div class="title">Figure 1. Figure</div>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s take the role of designers of this system. As the designers, we want to provide other people the ability to program Pacman-bot to move around the board (presumably to get the Cherry and avoid the Ghosts, but who knows what people will come up with). How might we allow people to program Pacman-bot?</p>
+</div>
+<div class="openblock">
+<div class="content">
+<div class="paragraph">
+<div class="title">Exercise</div>
+<p>Try to come up with a set of instructions that someone else could use to instruct pacman-bot to move around the board.</p>
+</div>
+</div>
+</div>
+<div class="openblock">
+<div class="content">
+<div class="paragraph">
+<div class="title">Exercise</div>
+<p>Test it out on yourself (or a friend) to make sure that Pacman could get from any one place to any other place using the instructions.</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Here are a few possible sets:</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 11.1111%;">
+<col style="width: 33.3333%;">
+<col style="width: 55.5556%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Set</th>
+<th class="tableblock halign-left valign-top">Instructions</th>
+<th class="tableblock halign-left valign-top">Sample Program</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="listingblock">
+<div class="content">
+<pre>forward back left right</pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="listingblock">
+<div class="content">
+<pre>forward
+forward
+left
+forward
+right</pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">B</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="listingblock">
+<div class="content">
+<pre>up down left right</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>(from pacman&#8217;s point of view)</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="listingblock">
+<div class="content">
+<pre>up
+up
+down
+right</pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">C</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="listingblock">
+<div class="content">
+<pre>^ v &lt; &gt;</pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="listingblock">
+<div class="content">
+<pre>^&gt;&gt;&gt;&gt;&gt;^&gt;v&gt;&gt;&gt;</pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">D</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="listingblock">
+<div class="content">
+<pre>forward rotate-right</pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="listingblock">
+<div class="content">
+<pre>forward
+rotate-right
+forward
+forward
+rotate-right</pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">E</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="listingblock">
+<div class="content">
+<pre>nX eX wX sX</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>(where X is the number of times to repeat the preceding direction)</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="listingblock">
+<div class="content">
+<pre>n5w2n5</pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="listingblock">
+<div class="content">
+<pre>(goto! x y)</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>(where x and y are integers corresponding to the row and column, respectively)</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="listingblock">
+<div class="content">
+<pre>(goto! 1 4)
+(goto! 1 1)</pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">G</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="listingblock">
+<div class="content">
+<pre>(find! object)</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>(where object is one of: cherry or ghost)</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="listingblock">
+<div class="content">
+<pre>(find! cherry)</pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">H</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="listingblock">
+<div class="content">
+<pre>go!</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>(which makes the bot go to the cherry)</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="listingblock">
+<div class="content">
+<pre>go!</pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>What we&#8217;ve come up with are programming languages! They are very limited, but, yes, they are programming languages. (Now you can tell your friends that not only can you program, but you&#8217;ve <em>designed</em> a programming language!)</p>
+</div>
+<div class="paragraph">
+<p>(Also worth noting: all the examples above are text-based instruction languages, but you could also have come up with visual instruction systems (drawing a map, using colors, using pictograms), a sound-based system, a hand gesture system&#8230;&#8203; anything)</p>
+</div>
+<div class="openblock">
+<div class="content">
+<div class="paragraph">
+<div class="title">Exercise</div>
+<p>For each language, write down the instructions to get pacman from his starting location to the cherry.</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>A few things to notice:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>there&#8217;s more than one possible way to define an instruction set for a given system</p>
+</li>
+<li>
+<p>some instruction sets require more explanation (“documentation”) than others</p>
+</li>
+<li>
+<p>some instruction sets are easier than others to solve a problem with</p>
+</li>
+<li>
+<p>some instruction sets result in more instructions than others (but might be easier to solve the problem with)</p>
+</li>
+<li>
+<p>some instruction sets are harder than others to read after the fact (but maybe easier to solve the problem with)</p>
+</li>
+<li>
+<p>given an instruction set, there&#8217;s more than one way to solve a problem</p>
+</li>
+<li>
+<p>instruction sets aren&#8217;t enough, a language must also define how instructions are to be combined (and as programmers, we must understand not just what instructions are available, but how they can be combined)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Later in this book we will be learning about the Clojure language and all the instructions it supports and how we can combine them to solve problems.</p>
+</div>
+<div class="paragraph">
+<p>Before we move on from pacman-bot, let&#8217;s try the following: can we convert between the different pacman-bot languages? If someone gave us pacman-bot that only understood Language X (<code>v&gt;^&lt;</code>) could we still program pacman-bot to understand a Language Y program (<code>n5e3w1</code>)? If <code>v&gt;^&lt;</code> are the only instructions that Language X allows, then the answer is “no”, at least not directly, but we could write another system that could convert from Language Y to Language X. It might look something like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>nX means repeat "^" X times
+wX means repeat "&lt;" X times
+eX means repeat "&gt;" X times
+sX means repeat "v" X times</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Can you see how the rules above would allow us to convert from <code>n5e3w1</code> to <code>^^^^^&gt;&gt;&gt;&lt;</code>?</p>
+</div>
+<div class="paragraph">
+<p>Now how about converting from Language Z <code>(goto! x y)</code> to Language Y <code>v&gt;^&gt;</code>? Ponder that for a moment.</p>
+</div>
+<div class="paragraph">
+<p>Hmmm&#8230;&#8203;</p>
+</div>
+<div class="paragraph">
+<p>We have a problem. In order to make pacman-bot follow the <code>(goto! 3 1)</code> instruction using the <code>v&gt;^&lt;</code> instructions, we need to know where pacman-bot is before we give him the command. Before, with Language X, we were able to blindly convert from one language to another, but this time, we need some information first (pacman-bot&#8217;s starting location).</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="figures/pacmanbot-system-board.svg" alt="pacmanbot system board">
+</div>
+</div>
+<div class="paragraph">
+<p>In our pacmanbot-system, pacmanbot&#8217;s location is at <code>(x,y) = (3,4)</code>.</p>
+</div>
+<div class="paragraph">
+<p>Lets refer to pacman bot&#8217;s starting location as pacmanX and pacmanY (so, for figure1 we would say that pacmanX is 3 and pacmanY is 4).</p>
+</div>
+<div class="paragraph">
+<p>Now, back to our problem: how do we go from an instruction like <code>(goto! 3 1)</code> to <code>v&gt;^&lt;</code> style instructions? (knowing that pacman-bot starts at <code>pacmanX</code> and <code>pacmanY</code>)</p>
+</div>
+<div class="openblock">
+<div class="content">
+<div class="paragraph">
+<div class="title">Exercise</div>
+<p>Try to come up with some rules to make the conversion possible. Use any words you want. It might take a little more math this time.</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>One way we could write down the rules could be:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>given pacmanX is some number indicating pacman-bot's starting X position
+given pacmanY is some number indicating pacman-bot's starting Y position
+
+(goto! targetX targetY) means:
+   if targetX is greater than pacmanX:
+      repeat "&gt;" (targetX - pacmanX) times
+   if targetX is less than pacmanX:
+      repeat "&lt;" (pacmanX - targetX) times
+   if targetY is greater than pacmanY:
+      repeat "v" (targetY - pacmanY) times
+   if targetY is less than pacmanY:
+      repeat "^" (pacmanY - targetY) times</pre>
+</div>
+</div>
+<div class="openblock">
+<div class="content">
+<div class="paragraph">
+<div class="title">Exercise</div>
+<p>Follow the rules above to convert from <code>(goto! 3 1)</code> to <code>v&gt;^&lt;</code> instructions, given that pacman-bot starts at his location in Figure 1: [3, 4].</p>
+</div>
+<div class="paragraph">
+<p>Got it? Now, follow the <code>v&gt;^&lt;</code> instructions to make sure our conversion did things correctly. Does it work?</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Our <code>goto!</code> command depends on pacman-bot&#8217;s initial position (<code>pacmanX</code> and <code>pacmanY</code>), which we could also say is pacman-bots “initial state”.
+The command also needs to be given the <code>targetX</code> and <code>targetY</code>, which are pacman-bot&#8217;s final target position (or “end state”). We can think of our <code>goto!</code> command as “taking pacman-bot from some initial state to some target state.”</p>
+</div>
+<div class="paragraph">
+<p>What if we wanted to implement Language Z now <code>(find! object)</code>?</p>
+</div>
+<div class="paragraph">
+<p>First off&#8230;&#8203; we need some extra information.  Whereas before, we were given the location to go to as part of the instructions, ex. <code>(goto! 3 1)</code>, now we will be given an object, either the cherry or the ghost, so we will need to know their locations. Lets call the cherry&#8217;s location <code>cherryX</code> and <code>cherryY</code>, and the ghost&#8217;s location <code>ghostX</code> and <code>ghostY</code>.</p>
+</div>
+<div class="paragraph">
+<p>We could implement the <code>(find! object)</code> command as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>pacmanX, pacmanY, cherryX, cherryY, ghostX, ghostY are the X Y position of pacman, cherry and ghost
+
+(find! object) means:
+   if object is cherry:
+     if cherryX is greater than pacmanX:
+        repeat "&gt;" (cherryX - pacmanX) times
+     if cherryX is less than pacmanX:
+        repeat "&lt;" (pacmanX - cherryX) times
+     if cherryY is greater than pacmanY:
+        repeat "v" (cherryY - pacmanY) times
+     if cherryY is less than pacmanY:
+        repeat "^" (pacmanY - cherryY) times
+   if object is ghost:
+     if ghostX is greater than pacmanX:
+        repeat "&gt;" (ghostX - pacmanX) times
+     if ghostX is less than pacmanX:
+        repeat "&lt;" (pacmanX - ghostX) times
+     if ghostY is greater than pacmanY:
+        repeat "v" (ghostY - pacmanY) times
+     if ghostY is less than pacmanY:
+        repeat "^" (pacmanY - ghostY) times</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Our instructions here are very similar to what we had before with <code>(goto! x y)</code>. They&#8217;re also very repetitive.</p>
+</div>
+<div class="paragraph">
+<p>What if we could just use <code>(goto! x y)</code> inside of our <code>(find! object)</code> command? What might that look like?</p>
+</div>
+<div class="openblock">
+<div class="content">
+<div class="paragraph">
+<div class="title">Exercise</div>
+<p>Try to rewrite our <code>find!</code> command using <code>goto!</code>.</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Here&#8217;s what we might end up with:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>given we have pacmanX, pacmanY, cherryX, cherryY, ghostX, ghostY as defined before
+
+given we have `goto!` as defined before
+
+(find! object) means:
+  if object is cherry:
+    (goto! cherryX cherryY)
+  if object is ghost:
+    (goto! ghostX ghostY)</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Bam! That&#8217;s all we need. Ponder it for a moment.</p>
+</div>
+<div class="paragraph">
+<p>What we&#8217;ve done is pretty impressive. We&#8217;ve written rules so we can convert from <code>(find! object)</code> to <code>(goto! x y)</code> to <code>v&gt;^&lt;</code> style instructions.</p>
+</div>
+<div class="paragraph">
+<p>Another way to think about it, is that we&#8217;ve written instructions at “different levels of abstractions” (from chapter 1, remember?)</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>  find!
+   |
+ goto!
+/ | | \
+v &gt; ^ &lt;</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Later, we&#8217;ll learn that the <code>find!</code> and <code>goto!</code> commands we defined would typically be called “functions”. <code>v</code>, <code>&gt;</code>, <code>^</code> and <code>&lt;</code> could also be called “functions”, except in our examples, <code>v&gt;^&lt;</code> were provided to us by the pacman-bot system, while <code>find!</code> and <code>goto!</code> we created ourselves.</p>
+</div>
+<div class="paragraph">
+<p>Defining “functions” that call other “functions” (&#8230;&#8203;that call other “functions”, that call other “functions”&#8230;&#8203;) is one of the primary activites of “real world” programming.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_functions">Functions</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>One thing to notice about the functions we made up in the previous chapter is that some of them require some information to be passed in, while others could be written on their own (for example, <code>goto</code> needed an <code>X</code> and <code>Y</code>, while <code>v</code> did not). We can think of those values as “inputs” to the functions (later we&#8217;ll also hear them called “parameters”, but for now, lets stick to “inputs”).</p>
+</div>
+<div class="paragraph">
+<p>With our pacman-bot system, we had an initial state (the positions of pacman-bot, the cherry and the ghost) and our <code>goto!</code> and <code>find!</code> function would change (or “transition”) the state into a new state by moving pacman-bot to a new location.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">State of Pacman-bot System</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Example</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">position of pacman</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">(3,4)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">position of ghost</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">(3,2)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">position of cherry</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">(3,1)</p></td>
+</tr>
+</tbody>
+</table>
+<div class="openblock">
+<div class="content">
+<div class="paragraph">
+<p>Pick your favorite board game or card game. What information do you need to describe the entire state?</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>We can say that our <code>goto!</code> and <code>find!</code> functions have “side effects” (ie. running them causes a change in the state of the system)</p>
+</div>
+<div class="paragraph">
+<p>Can we have functions without “side effects”? Would that ever be useful in a language?</p>
+</div>
+<div class="paragraph">
+<p>What if&#8230;&#8203; we had functions, which, instead of changing the system state, could just “return” the value of some calculation. For example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>(subtract x y) means:
+  return the result of subtracting y from x (ie. x - y)</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If we were to write <code>(subtract 5 2)</code> it would “return” <code>3</code>.</p>
+</div>
+<div class="paragraph">
+<p>If we defined:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>(divide x y) means:
+  return the result of dividing x and y (ie. x / y)</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Then, <code>(divide 15 5)</code> would “return” <code>3</code>.</p>
+</div>
+<div class="paragraph">
+<p>We can think of the “return” values of a function as the “output” of the function.</p>
+</div>
+<div class="paragraph">
+<p>Could we maybe allow for the output of a function to be used as an input? Perhaps we could write something like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>(divide 21 (subtract 8 1))</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#8230;&#8203;which we would say “returns” <code>3</code> because: <code>(subtract 8 1)</code> returns <code>7</code>, and <code>(divide 21 7)</code> returns <code>3</code>.</p>
+</div>
+<div class="paragraph">
+<p>This is getting interesting.</p>
+</div>
+<div class="paragraph">
+<p>Perhaps we could write a function that combines our <code>divide</code> and <code>subtract</code> functions?</p>
+</div>
+<div class="paragraph">
+<p>How about a function to calculate the slope of a line:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>(slope x1 y1 x2 y2) means:
+  return the result of:  (divide (subtract y2 y1) (subtract x2 x1))</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Instead of changing the state of some surrounding system, our <code>divide</code>, <code>subtract</code> and <code>slope</code> functions are just “returning” values. What&#8217;s the use of these “returned values”? To use as “inputs” to other functions!</p>
+</div>
+<div class="paragraph">
+<p>Presumably, at some point, we would want some side effects (say, like, printing out the result of a calculation to the screen), but, we could probably get a lot done just with functions that don&#8217;t change state.</p>
+</div>
+<div class="paragraph">
+<p>(Read this later: Appendix X: Avoiding State)</p>
+</div>
+<div class="paragraph">
+<p>In the future, we will refer to functions that don&#8217;t change state as “pure” functions, and ones that do as “stateful” or “impure” functions.</p>
+</div>
+<div class="sect2">
+<h3 id="_title">Title</h3>
+<div class="paragraph">
+<p>We can now think of functions as a type of instructions that a system understands, which optionally take some inputs, optionally return some values, and optionally change some state:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="figures/a-function.svg" alt="a function">
+</div>
+</div>
+<div class="paragraph">
+<p>There are some functions that a system provides for us (like <code>v&gt;^&lt;</code> from our pacman-bot example) and others that we write ourselves, using the system functions, to make our lives easier (like <code>goto!</code> and <code>slope</code>).</p>
+</div>
+<div class="paragraph">
+<p>We can now think of a “program” as a function of functions (&#8230;&#8203;of functions &#8230;&#8203;of functions):</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="figures/function-of-functions.svg" alt="function of functions">
+</div>
+</div>
+<div class="paragraph">
+<p>Like the functions inside of it, the “program” function may take some input, change state, and return some output.</p>
+</div>
+<div class="paragraph">
+<p>For example, a simple program could take in a number and two currencies and return you the result of converting from one currency to another based on today&#8217;s exchange rate. A more complicated program might take some input (say, mouse clicks and keyboard button presses) and change the display of the screen to let you play a game.</p>
+</div>
+<div class="paragraph">
+<p>We&#8217;re almost ready to starting learning Clojure proper, we just have one more concept to cover: “data”.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_data">Data</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Let&#8217;s think back to our <code>find!</code> “program”/“function” that we wrote for the pacman-bot system.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>(find! object) means:
+  if object is cherry:
+    (goto! cherryX cherryY)
+  if object is ghost:
+    (goto! ghostX ghostY)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>find!</code> would take an object as input (cherry or ghost) and change the state of the pacman-bot system so that pacman-bot would end up in the same position as the specified object. It would make use of the <code>v&gt;&lt;^</code> functions, which were provided by the system. It also needed to know the positions of pacman-bot, the cherry and the ghost (which were provided by the system as <code>pacmanX</code>, <code>cherryX</code>, <code>ghostX</code>&#8230;&#8203;)</p>
+</div>
+<div class="paragraph">
+<p>The input object and the positions pacman-bot, the cherry and the ghost were all pieces of information that our <code>find!</code> program needed to function. We refer to these kinds of pieces of information, in a broad sense, as “data”.</p>
+</div>
+<div class="paragraph">
+<p>Real world programs deal with a lot of data&#8201;&#8212;&#8201;lists of friends, blog posts, photos, addresses of businesses&#8201;&#8212;&#8201;and as a programmer, much of what you will be doing is transforming, combining, seperating and recombining data (using functions!).</p>
+</div>
+<div class="paragraph">
+<p>In our programs, data will be used in various ways:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>as inputs into our program (ex. a stream of Twitter updates), so that we can write one program and use it with different sets of data</p>
+</li>
+<li>
+<p>passed into functions and returned from functions</p>
+</li>
+<li>
+<p>to represent the state of the system (ex. the positions of the objects in our pacman-bot system)</p>
+</li>
+<li>
+<p>as a “hardcoded” reference to help our programs do what they need to do (for example, a table to from months-of-the-year in english to their numerical equivalents)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>There are infinite kinds of data we might want to handle in a program, but, it turns out, we can represent almost any kind of information using a few simple building blocks:</p>
+</div>
+<div class="sect2">
+<h3 id="_primitive_values">Primitive Values</h3>
+<div class="paragraph">
+<p>Primitive values are the simplest forms of data; you can think of them as the atoms of the programming world. They include numbers (such as <code>1</code> and <code>1.5</code>), “strings” (which represent text, such as <code>"hello"</code> and <code>"goodbye"</code>) and other types of things called “booleans”, “keywords” and “nil”. Let&#8217;s take a look at each.</p>
+</div>
+<div class="sect3">
+<h4 id="_numbers">Numbers</h4>
+<div class="paragraph">
+<p>A “number” is a numerical values. Clojure, which is the language we&#8217;ll be using for the rest of this book understands three kinds of numbers:</p>
+</div>
+<div class="paragraph">
+<p>Integers (ex. <code>25</code>)</p>
+</div>
+<div class="paragraph">
+<p>Decimals (ex. <code>23.234</code>) (also called “doubles”, “floats”, and “longs” in some languages)</p>
+</div>
+<div class="paragraph">
+<p>Fractions (ex. <code>7/23</code>)</p>
+</div>
+<div class="paragraph">
+<p>From now on, we&#8217;ll refer to all three of these forms as “numbers”.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_strings">Strings</h4>
+<div class="paragraph">
+<p>A “string” represents text. It can be a single character: <code>"a"</code>, a word: <code>"elephant"</code>, a sentence: <code>"This is a string"</code>, or the entire corpus of Shakespeare&#8217;s works: (uhhh&#8230;&#8203; to save space, we&#8217;ll skip the example for this one).</p>
+</div>
+<div class="paragraph">
+<p>In Clojure, as in most programming languages, strings are written with quotation marks around them, like so: <code>"hello again!"</code>. The quotation marks are necessary to help differentiate strings from names of functions in our program (so, <code>goto!</code> would be the function, while <code>"goto!"</code> would just be the text).  In a similar vein, <code>2</code> is the number 2, while <code>"2"</code> is a string - they are completely different things, as far as Clojure is concerned.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_booleans">Booleans</h4>
+<div class="paragraph">
+<p>A “boolean” is a fancy programmer term for the concepts of “true” and “false”. In Clojure, that&#8217;s exactly how we write them: <code>true</code> and <code>false</code>. They come in handy for representing certain information (ex. is John late? &#8594; <code>true</code>), as results of comparisons (ex. is 3 greater than 5? &#8594; <code>false</code>) and as return values from functions (ex. <code>(even? 5)</code> &#8594; <code>false</code>).</p>
+</div>
+<div class="paragraph">
+<p>Just to make it super clear, <code>true</code> is not the same things as <code>"true"</code> (the first is a boolean, the second is a string).</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_nil">nil</h4>
+<div class="paragraph">
+<p>“nil” is a special value that represents the “lack of a value” or “nothingness”. In math, that honor is usually bestowed to <code>0</code>, but because <code>0</code> is already number, it ends up being very useful to have a way to say “nothing”. In Clojure, you can write it simply as <code>nil</code>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_keywords">keywords</h4>
+<div class="paragraph">
+<p>A “keyword” is a label that is used in our programs to help us name things (we&#8217;ll see them very soon in maps). For example, we might have a program that deals with colors, which we could represent in Clojure with keywords as so: <code>:red</code>, <code>:white</code>, <code>:green</code>, <code>:purple</code>. Keywords start with a colon (<code>:</code>).</p>
+</div>
+<div class="paragraph">
+<p>Keywords might seem similar to strings (and in some languages, there are no keywords), but they&#8217;re not meant to be “broken down” like strings; with a string, we might ask for the 10th character, or count the number of characters, or count the number of words, or split a string into seperate words&#8201;&#8212;&#8201;these operations can&#8217;t be done with keywords. Strings can be thought of as a “collection of characters” while keywords are just a handy label to use in our programs.</p>
+</div>
+<div class="paragraph">
+<p>If the distinction is confusing, don&#8217;t worry about it. If you use strings instead of keywords, your programs will still work.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_compound_values">compound values</h3>
+<div class="paragraph">
+<p>Primitive values are nice, but we often need to deal with collections of values, and that&#8217;s where “vectors” and “maps” come in. If primitive values were the atoms of the programming world, then “compound values” are the molecules.</p>
+</div>
+<div class="sect3">
+<h4 id="_vectors">vectors</h4>
+<div class="paragraph">
+<p>A “vector” is an ordered lists of values. In Clojure, we represent a vector by listing values in between square brackets (<code>[]</code>). For example, here is a vector of numbers: <code>[10 4 2 6]</code>, and here is a vector of strings and numbers: <code>[1 "hello" 4 "goodbye"]</code>.</p>
+</div>
+<div class="paragraph">
+<p>In other languages, you may also hear vectors referred to as “lists”, “arrays” or “sequences”.</p>
+</div>
+<div class="paragraph">
+<p>Being able to store values in lists ends up being very, very useful. Vectors will also allow us to add values to them, remove values, do something for each value inside, and retrieve values based on their position.</p>
+</div>
+<div class="paragraph">
+<p>Vectors can also contain non-primitive values, such as other vectors: <code>[1 2 3 ["four" [:five]]]</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_maps">maps</h4>
+<div class="paragraph">
+<p>A “maps” is like a real-world dictionary; it contains a list of “keys”, each of which correponds to a certain “value”. In a real-world dictionary, the “keys” are the words and the “values” are the definitions.</p>
+</div>
+<div class="paragraph">
+<p>Here is an example of an (abridged) real-world dictionary in Clojure, written as a map of strings to strings:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>{ "Chair"  "A piece of furniture used for sitting."
+  "Orange" "A citrus fruit or color."
+  "Guitar" "A musical instrument." }</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Just as with a real-world dictionary, we can lookup the corresponding definition (“value”) to a word (“key”). We could do this by writing: <code>(dictionary "chair")</code> which would return <code>"A piece of furniture used for sitting"</code>.</p>
+</div>
+<div class="paragraph">
+<p>Maps end up being useful for representing lots of different real world data, such as people: <code>{ :name "Bob" :age 23 }</code> or places: <code>{ :name "Ghost Town" :population 0 }</code></p>
+</div>
+<div class="paragraph">
+<p>Maps can have any values as “keys” and any values as “values”. This is a totally legitimate map:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>{ [1 2] "one two"
+  :three "three"
+  {} nil }</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_other_types">other types</h3>
+<div class="paragraph">
+<p>There are more types in Clojure than mentioned here, but these ones will do for now, and we&#8217;ll see the others in the future (notably: “sets”, “datetimes” and “uuids”).</p>
+</div>
+<div class="sect3">
+<h4 id="_putting_things_together">putting things together</h4>
+<div class="paragraph">
+<p>Now that we know various kinds of values that we can work with, let&#8217;s represent some non-trivial data using them.</p>
+</div>
+<div class="paragraph">
+<p>How might we represent the countries of the world, their areas, populations and capital cities?</p>
+</div>
+<div class="paragraph">
+<p>Here&#8217;s one way:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>[
+  { :name "Canada"
+    :population 1234
+    :area 4567
+    :capital "Toronto"
+    :cities [{:name "Toronto"
+              :area 456
+              :population 1252}
+             {:name "Montreal"
+              :area 512
+              :population 1262}]}
+
+  { :name "China"
+    :population 2345
+    :area 5678
+    :capital "Beijing"
+    :cities [{:name "Beijing"
+              :area 123
+              :population 1235}
+             {:name "Shanghai"
+              :area 456
+              :population 542}]}
+
+  ...
+]</pre>
+</div>
+</div>
+<div class="openblock">
+<div class="content">
+<div class="paragraph">
+<div class="title">Exercise</div>
+<p>Try coming up with ways of representing the following data sets:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>a contact list (each with names, an email and multiple phone numbers)</p>
+</li>
+<li>
+<p>the pacman-bot system</p>
+</li>
+<li>
+<p>the system you came up with in &lt;previous chapter exercise&gt;</p>
+</li>
+<li>
+<p>a count of how many times each letter occurs in a piece of text</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_derived_values">Derived Values</h4>
+<div class="openblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>a shopping receipt</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_transformations">Transformations</h4>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Constants</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">State</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Helper Functions</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Actions</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_enter_clojure">Enter Clojure</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>It&#8217;s now time to being learning Clojure proper.</p>
+</div>
+<div class="paragraph">
+<p>As we had discussed in Chp 1, a programming language consists of two broad concepts:
+ - the various commands that you can call
+ - the rules of how to write and combine the commands (the "syntax")</p>
+</div>
+<div class="paragraph">
+<p>In this chapter, we will learn a few Clojure commands, but focus mostly on how commands are written and how they can be combined. We&#8217;ll then start using Clojure to solve simple problems. Over the next few chapters we will gradually introduce more and more of the functions that Clojure has built-in and use them to solve increasingly difficult problems.</p>
+</div>
+<div class="sect2">
+<h3 id="_clojure_syntax">Clojure Syntax</h3>
+<div class="paragraph">
+<p>A Clojure program is written as text and is composed of "values", "forms", and "symbols". The text that is</p>
+</div>
+<div class="paragraph">
+<p>"Values" are text that represents data. We spent all of the previous chapter discussing values. Here&#8217;s a number: <code>1</code>, a string: <code>"hello!"</code>, and vector of numbers: <code>[1 2 3]</code></p>
+</div>
+<div class="paragraph">
+<p>Symbols are text that are used to name things and refer to things that have been named. For example, we could give the vector <code>["Monday" "Tuesday" "Wednesday" "Thursday" "Friday" "Saturday" "Sunday"]</code> the name <code>days-of-the-week</code> and later refer to it as <code>days-of-the-week</code> instead of writing it all out again (we&#8217;ll cover this in more detail very soon).</p>
+</div>
+<div class="paragraph">
+<p>A "form" is unit of code that contains values, forms and/or symbols. It is a set of brackets surrounding some content.
+  Here is any empty "form": <code>()</code>.
+  Here is a form with 3 numbers: <code>(1 2 3)</code>
+  Here is a form with 2 numbers and a vector of numbers: <code>(1 2 [3 4])</code>
+  Here are two forms, one after the other: <code>("a" "b" "c") (1 2 3)</code>
+  Here is a form within a form: <code>(1 (2) 3)</code>
+  Here is a form with a 2 symbols and a string <code>(println "Hello" name)</code></p>
+</div>
+<div class="paragraph">
+<p>A Clojure "program" is a text file that contains one or more forms, values or symbols.
+Each form can contain one or more forms, values or symbols.</p>
+</div>
+<div class="paragraph">
+<p>&#8230;&#8203;and that&#8217;s it for the syntax.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_clojure_functions">Clojure Functions</h3>
+<div class="paragraph">
+<p>In Chapter 1, we discussed how languages define a set of commands that the programmer can call, and if the syntax allows for it, a way to create our own commands (which we called "functions") that are named combinations of the provided commands and/or our own commands.</p>
+</div>
+<div class="paragraph">
+<p>To start, we will learn X of Clojure&#8217;s built-in "commands":</p>
+</div>
+<div class="paragraph">
+<p><code>print</code></p>
+</div>
+<div class="paragraph">
+<p><code>(print "Happy Monday "Bob!")</code></p>
+</div>
+<div class="paragraph">
+<p><code>let</code></p>
+</div>
+<div class="paragraph">
+<p><code>(let [name "Bob"]
+      ...
+       )</code></p>
+</div>
+<div class="paragraph">
+<p><code>fn</code></p>
+</div>
+<div class="paragraph">
+<p><code>+</code></p>
+</div>
+<div class="paragraph">
+<p><code>/</code></p>
+</div>
+<div class="paragraph">
+<p>if
+when</p>
+</div>
+<div class="paragraph">
+<p>map</p>
+</div>
+<div class="paragraph">
+<p>(let [blah (fn []  )]</p>
+</div>
+<div class="paragraph">
+<p>)</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_solving_problems">Solving Problems</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>identify:
+  inputs
+  outputs
+  other required information</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>any steps</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>start 'top-down'</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>making up names of functions</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>do what you know</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>test</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>don't worry about perfect: make things work, then make things right</pre>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_morse_code">Morse Code</h3>
+<div class="literalblock">
+<div class="content">
+<pre>print
+def
+defn
+-&gt;&gt;
+split
+map
+join</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>(defn str&#8594;vec [s]
+  (clojure.string/split s ""))</p>
+</div>
+<div class="paragraph">
+<p>(defn vec&#8594;str [v]
+  (clojure.string/join "" v))</p>
+</div>
+<div class="paragraph">
+<p>(def lookup
+  {"s" "&#8230;&#8203;"
+   "o" "---"})</p>
+</div>
+<div class="paragraph">
+<p>(defn char&#8594;morse [char]
+  (get lookup char))</p>
+</div>
+<div class="paragraph">
+<p>(defn text&#8594;morse [text]
+  (&#8594;&gt; text
+       str&#8594;vec
+       (map char&#8594;morse)
+       vec&#8594;str))</p>
+</div>
+<div class="paragraph">
+<p>(text&#8594;morse "hello world")</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_merge_sort">Merge Sort</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>(defn merge [coll-a coll-b]
+
+
+)
+
+(defn merge-sort [coll]
+  (if (&lt;= (count coll) 2)
+    coll
+    (let [[a b] (split-at (/ (count coll) 2) coll)]
+      (concat (merge-sort a) (merge-sort b)))))</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_character_frequency">Character Frequency</h3>
+
+</div>
+<div class="sect2">
+<h3 id="_average">Average</h3>
+<div class="literalblock">
+<div class="content">
+<pre>reduce (or apply)</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_web_development">Web Development</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Understanding the systems we&#8217;ll be using:
+ - browser
+    - HTML
+    - CSS
+    - JS
+ - HTTP</p>
+</div>
+<div class="paragraph">
+<p>react
+reagent</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_programming_interfaces">Appendix A: Programming Interfaces</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>text
+  by far most popular
+  piggyback on our ability to read</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>decent density ratio
+easy to manipulate</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>flow-based</p>
+</div>
+<div class="paragraph">
+<p>block-based (scratch)</p>
+</div>
+<div class="paragraph">
+<p>cell-based (excel)</p>
+</div>
+<div class="paragraph">
+<p>&#8230;&#8203;</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_why_clojure">Appendix B: Why Clojure</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>LISP = less syntax:
+  just <code>(fn arg arg)</code> + some data types
+  no semicolons, no commas
+  ie. more time learning functions and "thinking like a progammer"; less on fighting compiler</p>
+</div>
+<div class="paragraph">
+<p>REPL</p>
+</div>
+<div class="paragraph">
+<p>practical</p>
+</div>
+<div class="paragraph">
+<p>reach</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_down_the_computer_rabbit_hole">Appendix C: Down the Computer Rabbit Hole</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>your program
+&#8230;&#8203;
+clojure
+&#8230;&#8203;
+java
+&#8230;&#8203;
+OS?
+&#8230;&#8203;
+assembly
+(bytecode?)
+binary
+CPU
+&#8230;&#8203;
+adders, latches, &#8230;&#8203;
+AND, OR, NAND gates
+electrons and PNP transistors</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_programming_exercises">Appendix D: Programming Exercises</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>password obfuscator
+  given a string replace each occurence
+  handle uppercae and lowercase
+    a &#8594; 4
+    e &#8594; 3
+    o &#8594; 0
+    l &#8594; 1</p>
+</div>
+<div class="paragraph">
+<p>bound
+count words in a file
+count occurence of each character in a file
+identify if a word is a palindrome
+merge sort
+identify duplicate files in a directory
+translate from piglatin and back
+english to morse code and back</p>
+</div>
+<div class="paragraph">
+<p>encrypt and decrypt some text</p>
+</div>
+<div class="paragraph">
+<p>tally up voting results</p>
+</div>
+<div class="paragraph">
+<p>english numbers &#8594; integers and back</p>
+</div>
+<div class="paragraph">
+<p>body mass index</p>
+</div>
+<div class="paragraph">
+<p>credit card number checker (luhn)</p>
+</div>
+<div class="paragraph">
+<p>levenstein distance</p>
+</div>
+<div class="paragraph">
+<p>fuzzy search (using lev)</p>
+</div>
+<div class="paragraph">
+<p>guess my number game ("smaller" / "larger")
+choose your own adventure game
+schedule fitter (simulated annealing)
+accounting system
+sudoku solver
+mastermind game (w/ cheating ai)
+implement the pacman-bot system</p>
+</div>
+<div class="paragraph">
+<p>game of life</p>
+</div>
+<div class="paragraph">
+<p>xor, nor, and, or</p>
+</div>
+<div class="paragraph">
+<p><a href="http://programmingzen.com/15-sites-for-programming-exercises/" class="bare">http://programmingzen.com/15-sites-for-programming-exercises/</a></p>
+</div>
+<div class="paragraph">
+<p>2sum
+3sum
+<a href="http://blog.gainlo.co/index.php/2016/07/19/3sum/?utm_source=reddit&amp;utm_medium=r%2Fcompsci%2F72116&amp;utm_campaign=reddit" class="bare">http://blog.gainlo.co/index.php/2016/07/19/3sum/?utm_source=reddit&amp;utm_medium=r%2Fcompsci%2F72116&amp;utm_campaign=reddit</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_avoiding_state">Appendix E: Avoiding State</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>what is state</p>
+</div>
+<div class="paragraph">
+<p>why state is bad</p>
+</div>
+<div class="paragraph">
+<p>how we can avoid state</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_text_encoding">Appendix F: Text Encoding</h2>
+<div class="sectionbody">
+
+</div>
+</div>
+<div class="sect1">
+<h2 id="_regular_expressions">Appendix G: Regular Expressions</h2>
+<div class="sectionbody">
+
+</div>
+</div>
+<div class="sect1">
+<h2 id="_clojure_style_guide">Appendix H: Clojure Style Guide</h2>
+<div class="sectionbody">
+
+</div>
+</div>
+<div class="sect1">
+<h2 id="_clojure_cheatsheet">Appendix I: Clojure Cheatsheet</h2>
+<div class="sectionbody">
+
+</div>
+</div>
+<div class="sect1">
+<h2 id="_debugging">Appendix J: Debugging</h2>
+<div class="sectionbody">
+
+</div>
+</div>
+<div class="sect1">
+<h2 id="_refactoring">Appendix K: Refactoring</h2>
+<div class="sectionbody">
+
+</div>
+</div>
+<div class="sect1">
+<h2 id="_test_driven_development">Appendix L: Test Driven Development</h2>
+<div class="sectionbody">
+
+</div>
+</div>
+<div class="sect1">
+<h2 id="_choosing_an_editor">Appendix M: Choosing an Editor</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Lightable
+  + plugins</p>
+</div>
+<div class="paragraph">
+<p>Cursive</p>
+</div>
+<div class="paragraph">
+<p>Atom
+  + plugins</p>
+</div>
+<div class="paragraph">
+<p>Emacs</p>
+</div>
+<div class="paragraph">
+<p>Vi</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_resources">Appendix N: Resources</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Clojure Brave and True</p>
+</div>
+<div class="paragraph">
+<p>Cognitory</p>
+</div>
+<div class="paragraph">
+<p>clojuredocs</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_glossary">Appendix O: Glossary</h2>
+<div class="sectionbody">
+<div class="dlist glossary">
+<dl>
+<dt>Code (v)</dt>
+<dt>Code (n)</dt>
+<dt>Program (n)</dt>
+<dt>Program (v)</dt>
+<dt>Programming (n)</dt>
+<dt>Function (n)</dt>
+<dt>Function (v)</dt>
+<dt>String (n)</dt>
+<dt>Comment (n)</dt>
+<dt>Test (n)</dt>
+<dt>Test (v)</dt>
+<dt>Test Driven Development (n)</dt>
+<dt>Parameter (n)</dt>
+<dt>Abstract (v)</dt>
+<dt>Side Effect (n)</dt>
+<dt>Return (v)</dt>
+<dt>Returned Value (n)</dt>
+<dt>Input (n)</dt>
+<dt>Output (n)</dt>
+<dt>Pure Function (n)</dt>
+<dt>Data (n)</dt>
+<dt>Boolean (n)</dt>
+<dt>Nil (n)</dt>
+<dt>Map (n)</dt>
+<dt>Map (v)</dt>
+</dl>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2016-08-23 14:56:17 EDT
+</div>
+</div>
+</body>
+</html>

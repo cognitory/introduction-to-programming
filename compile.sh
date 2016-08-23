@@ -4,3 +4,5 @@ cat ./stylesheets/reset.css ./stylesheets/cognitory.css \
 asciidoctor \
   -a stylesheet=/tmp/intro-to-programming.css \
   -a theme='' index.asciidoc
+
+mv index.html docs/index.html
