@@ -6,3 +6,4 @@ asciidoctor \
   -a theme='' index.asciidoc
 
 mv index.html docs/index.html
+cp -r figures docs/
