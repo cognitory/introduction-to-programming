@@ -5,7 +5,16 @@ Introduction to Programming
 
 include::chapters/01-what-is-programming.asciidoc[]
 
-include::chapters/02-data.asciidoc[]
+include::chapters/02-enter-the-pacman.asciidoc[]
+
+include::chapters/03-functions.asciidoc[]
+
+include::chapters/04-data.asciidoc[]
+
+
+include::chapters/07-enter-clojure.asciidoc[]
+
+include::chapters/08-solving-problems.asciidoc[]
 
 
 == Web Development

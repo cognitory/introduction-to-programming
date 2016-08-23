@@ -1,0 +1,127 @@
+== Functions
+
+One thing to notice about the functions we made up in the previous chapter is that some of them require some information to be passed in, while others could be written on their own (for example, `goto` needed an `X` and `Y`, while `v` did not). We can think of those values as “inputs” to the functions (later we'll also hear them called “parameters”, but for now, lets stick to “inputs”).
+
+With our pacman-bot system, we had an initial state (the positions of pacman-bot, the cherry and the ghost) and our `goto!` and `find!` function would change (or “transition”) the state into a new state by moving pacman-bot to a new location.
+
+// TODO: clarify what is meant by state
+
+|===
+| State of Pacman-bot System | Example
+| position of pacman | (3,4)
+| position of ghost  | (3,2)
+| position of cherry | (3,1)
+|===
+
+
+// TODO describe another system,
+// BASKETBALL
+//	position of all players (and their team)
+//		orientation
+//	position of the goals
+//	size of the court
+//	position of the ball
+//	points of each team
+//	# of fouls
+//	time
+
+// TODO add function examples for side effects (shoot!) and not side effects (team-of :bob) (time-up?)
+
+
+
+--
+.Exercise
+
+Pick your favorite board game or card game. What information do you need to describe the entire state?
+
+--
+
+
+We can say that our `goto!` and `find!` functions have “side effects” (ie. running them causes a change in the state of the system)
+
+// TODO a bit more on side effects
+
+Can we have functions without “side effects”? Would that ever be useful in a language?
+
+What if... we had functions, which, instead of changing the system state, could just “return” the value of some calculation. For example:
+
+----
+(subtract x y) means:
+  return the result of subtracting y from x (ie. x - y)
+----
+
+If we were to write `(subtract 5 2)` it would “return” `3`.
+
+If we defined:
+
+----
+(divide x y) means:
+  return the result of dividing x and y (ie. x / y)
+----
+
+Then, `(divide 15 5)` would “return” `3`.
+
+We can think of the “return” values of a function as the “output” of the function.
+
+// [diagram]
+
+Could we maybe allow for the output of a function to be used as an input? Perhaps we could write something like this:
+
+----
+(divide 21 (subtract 8 1))
+----
+
+...which we would say “returns” `3` because: `(subtract 8 1)` returns `7`, and `(divide 21 7)` returns `3`.
+
+This is getting interesting.
+
+Perhaps we could write a function that combines our `divide` and `subtract` functions?
+
+How about a function to calculate the slope of a line:
+// TODO diagram, math notation
+
+----
+(slope x1 y1 x2 y2) means:
+  return the result of:  (divide (subtract y2 y1) (subtract x2 x1))
+----
+
+
+Instead of changing the state of some surrounding system, our `divide`, `subtract` and `slope` functions are just “returning” values. What's the use of these “returned values”? To use as “inputs” to other functions!
+
+Presumably, at some point, we would want some side effects (say, like, printing out the result of a calculation to the screen), but, we could probably get a lot done just with functions that don't change state.
+
+(Read this later: Appendix X: Avoiding State)
+
+In the future, we will refer to functions that don't change state as “pure” functions, and ones that do as “stateful” or “impure” functions.
+
+// TODO: add exercise, list a bunch of functions, have reader identify if they are pure or stateful
+
+// TODO: analogy from math
+// TODO: analogy from Excel
+
+// TODO reveal using of ! to indicate stateful function
+
+=== Title
+
+We can now think of functions as a type of instructions that a system understands, which optionally take some inputs, optionally return some values, and optionally change some state:
+
+// TODO: label diagram
+
+image::figures/a-function.svg[]
+
+There are some functions that a system provides for us (like `v>^<` from our pacman-bot example) and others that we write ourselves, using the system functions, to make our lives easier (like `goto!` and `slope`).
+
+We can now think of a “program” as a function of functions (...of functions ...of functions):
+
+image::figures/function-of-functions.svg[]
+
+// TODO: add state to diagam
+
+Like the functions inside of it, the “program” function may take some input, change state, and return some output.
+
+For example, a simple program could take in a number and two currencies and return you the result of converting from one currency to another based on today's exchange rate. A more complicated program might take some input (say, mouse clicks and keyboard button presses) and change the display of the screen to let you play a game.
+
+We're almost ready to starting learning Clojure proper, we just have one more concept to cover: “data”.
+
+
+// TODO add some exercises for this section

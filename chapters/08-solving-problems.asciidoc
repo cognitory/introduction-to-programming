@@ -1,0 +1,90 @@
+== Solving Problems
+
+// the plan:
+//    introduce one or a few functions
+//    give sample of the functions work
+//    use new functions (plus earlier functions) to solve a problem (walk through)
+//    give a few problem to solve as exercise (+ hint at required functions)
+//    repeat
+
+
+identify:
+  inputs
+  outputs
+  other required information
+
+  any steps
+
+
+  start 'top-down'
+
+  making up names of functions
+
+  do what you know
+
+  test
+
+  don't worry about perfect: make things work, then make things right
+
+
+
+
+=== Morse Code
+  print
+  def
+  defn
+  ->>
+  split
+  map
+  join
+
+
+(defn str->vec [s]
+  (clojure.string/split s ""))
+
+(defn vec->str [v]
+  (clojure.string/join "" v))
+
+(def lookup
+  {"s" "..."
+   "o" "---"})
+
+(defn char->morse [char]
+  (get lookup char))
+
+(defn text->morse [text]
+  (->> text
+       str->vec
+       (map char->morse)
+       vec->str))
+
+(text->morse "hello world")
+
+=== Merge Sort
+
+
+
+```
+(defn merge [coll-a coll-b]
+
+
+)
+
+(defn merge-sort [coll]
+  (if (<= (count coll) 2)
+    coll
+    (let [[a b] (split-at (/ (count coll) 2) coll)]
+      (concat (merge-sort a) (merge-sort b)))))
+```
+
+
+=== Character Frequency
+
+
+
+=== Average
+  reduce (or apply)
+
+
+
+
