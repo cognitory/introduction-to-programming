@@ -655,7 +655,7 @@ Just to make it super clear, `true` is not the same things as `"true"` (the firs
 
 ===== keywords
 
-A “keywords” is a label that is used in our programs to help us name things (we'll see them very soon in maps). For example, we might have a program that deals with colors, which we could represent in Clojure with keywords as so: `:red`, `:white`, `:green`, `:purple`. Keywords start with a colon (`:`).
+A “keyword” is a label that is used in our programs to help us name things (we'll see them very soon in maps). For example, we might have a program that deals with colors, which we could represent in Clojure with keywords as so: `:red`, `:white`, `:green`, `:purple`. Keywords start with a colon (`:`).
 
 Keywords might seem similar to strings (and in some languages, there are no keywords), but they're not meant to be “broken down” like strings; with a string, we might ask for the 10th character, or count the number of characters, or count the number of words, or split a string into seperate words -- these operations can't be done with keywords. Strings can be thought of as a “collection of characters” while keywords are just a handy label to use in our programs.
 
