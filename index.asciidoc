@@ -5,6 +5,8 @@ Introduction to Programming
 
 include::chapters/01-what-is-programming.asciidoc[]
 
+include::chapters/02-data.asciidoc[]
+
 
 == Web Development
 include::chapters/99-web-development.asciidoc[]
